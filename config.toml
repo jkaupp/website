@@ -82,7 +82,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
     imperfect = true
-    width = ""
+    width = "100px"
     alt       = "je suis un canard geant"
 
 [params.postAmount]
