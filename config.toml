@@ -100,6 +100,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     [[menu.main]]
         name = "About"
         url = "/about/"
+        identifier = "fa fa-question"
         weight = 6
 
     
