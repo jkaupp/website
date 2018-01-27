@@ -91,41 +91,40 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
-[[menu.main]]
-  name = "Home"
-  url = "/"
-  identifier = "fa fa-home"
-  weight = 1
+ [[menu.main]]
+        name = "Blog"
+        url = "/post/"
+        identifier = "fa fa-newspaper-o"
+        weight = 4
 
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  identifier = "fa fa-id-card-o"
-  weight = 2
+    [[menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 5
 
-[[menu.main]]
-  name = "Blog"
-  url = "/blog/"
-  identifier = "fa fa-newspaper-o"
-  weight = 3
+    [[menu.main]]
+        name = "Categories"
+        url = "/categories/"
+        weight = 6
 
-[[menu.main]]
-  name = "Itemized"
-  url = "/itemized/"
-  identifier = "fa fa-list"
-  weight = 4
+    [[menu.main]]
+        name = "GitHub"
+        url = "https://github.com/RobertMyles"
+        identifier = "fa fa-code"
+        weight = 3
 
-[[menu.main]]
-  name = "Categories"
-  url = "/categories/"
-  identifier = "fa fa-sitemap"
-  weight = 5
+    [[menu.main]]
+        name = "Research"
+        url = "/research/"
+        identifier = "fa fa-bar-chart"
+        weight = 2
 
-[[menu.main]]
-  name = "Contact"
-  url = "/contact/"
-  identifier = "fa fa-envelope-o"
-  weight = 6
+    [[menu.main]]
+        name = "CV"
+        url = "/cv/"
+        identifier = "fa fa-file-o"
+        weight = 1
+
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
@@ -162,9 +161,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   whatsapp         = "" 
     wechat         = ""
     qq             = "" # User ID Number
-  instagram        = "example"
+  instagram        = ""
   tumblr           = ""
-  twitter          = "jakekaup"
+  twitter          = "jakekaupp"
   skype            = ""
   snapchat         = ""
   pinterest        = ""
