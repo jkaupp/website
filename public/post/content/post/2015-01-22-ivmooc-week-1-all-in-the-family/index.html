@@ -68,7 +68,7 @@
 
 <meta itemprop="datePublished" content="2015-01-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-01-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="232">
+<meta itemprop="wordCount" content="225">
 
 
 
@@ -417,26 +417,24 @@ I did learn some new things, new tricks and new tools from the lectures and I&rs
 
 <p>After realizing that it was using python, that made things a lot easier and just whipped up a quick script to do what I wanted it to do.</p>
 
-<p>{% highlight python %}
-resizeLinear(wealth,5,20)
-colorize(priorates,&ldquo;198,219,239&rdquo;,&ldquo;8,69,148&rdquo;;)
-for n in g.nodes:
-    n.labelvisible = true
-    n.strokecolor = n.color
-for e in g.edges:
-    e.labelvisible = false
-    e.width = 1
-    if (e.business==&ldquo;;T&rdquo;; and e.marriage==&ldquo;;T&rdquo;;):
-        e.color=&ldquo;;102,194,165&rdquo;;
-    if (e.business==&ldquo;;T&rdquo;; and e.marriage==&ldquo;;F&rdquo;;):
-        e.color=&ldquo;;252,141,98&rdquo;;
-    if (e.business==&ldquo;;F&rdquo;; and e.marriage==&ldquo;;T&rdquo;;):
-        e.color=&ldquo;;141,160,203&rdquo;;
-{% endhighlight %}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resizeLinear(wealth,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">20</span>)
+colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;198,219,239&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;8,69,148&#34;</span>;)
+<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>nodes:
+    n<span style="color:#f92672">.</span>labelvisible <span style="color:#f92672">=</span> true
+    n<span style="color:#f92672">.</span>strokecolor <span style="color:#f92672">=</span> n<span style="color:#f92672">.</span>color
+<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>edges:
+    e<span style="color:#f92672">.</span>labelvisible <span style="color:#f92672">=</span> false
+    e<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;102,194,165&#34;</span>;
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;F&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;252,141,98&#34;</span>;
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;F&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;141,160,203&#34;</span>;</code></pre></div>
 
 <p>That lead me to the basic visualization, that I quickly pulled into <a href="http://affinity.serif.com/en-gb/">Affinity Designer</a>, my vector art and design instrument of choice, and made this:</p>
 
-<p><img src="{{ site.url }}/assets/ivmooc-ass-12.png" alt="Relationships of Florentine Families Visualized" /></p>
+<p><img src="img/ivmooc-ass-12.png" alt="Relationships of Florentine Families Visualized" /></p>
 
 <p>This was a lot of fun to play around with, and dust off some skills that I haven&rsquo;t used or applied in a while.  Looking forward to the rest of the course, learning and interacting with everyone!</p>
 

@@ -8,7 +8,7 @@ I did learn some new things, new tricks and new tools from the lectures and I'm 
 
 After realizing that it was using python, that made things a lot easier and just whipped up a quick script to do what I wanted it to do.
 
-{% highlight python %}
+{{< highlight python >}}
 resizeLinear(wealth,5,20)
 colorize(priorates,"198,219,239","8,69,148";)
 for n in g.nodes:
@@ -23,10 +23,10 @@ for e in g.edges:
         e.color=";252,141,98";
     if (e.business==";F"; and e.marriage==";T";):
         e.color=";141,160,203";
-{% endhighlight %}
+{{< / highlight >}}
 
 That lead me to the basic visualization, that I quickly pulled into [Affinity Designer](http://affinity.serif.com/en-gb/), my vector art and design instrument of choice, and made this:
 
-![Relationships of Florentine Families Visualized]({{ site.url }}/assets/ivmooc-ass-12.png)
+![Relationships of Florentine Families Visualized](img/ivmooc-ass-12.png)
 
 This was a lot of fun to play around with, and dust off some skills that I haven't used or applied in a while.  Looking forward to the rest of the course, learning and interacting with everyone!
