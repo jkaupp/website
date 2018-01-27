@@ -11,7 +11,7 @@
 <html>
     <head>
         
-            <title>Blog - Jake Kaupp</title>
+            <title>I&#39;ll take &#34;Famous Titles&#34; for $400 Alex.  #IVMOOC Week 4 - Jake Kaupp</title>
         
 
         <meta charset="utf-8" />
@@ -42,14 +42,16 @@
             
         
 
-        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Blog"/>
-<meta name="twitter:description" content="A Question of Space, a matter of time: Jake Kaupp&#39;s Website"/>
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="I&#39;ll take &#34;Famous Titles&#34; for $400 Alex.  #IVMOOC Week 4"/>
+<meta name="twitter:description" content="Two posts in week, and two weeks of #IVMOOC down! Topical analysis this week, and keeping in theme, here&rsquo;s what I&rsquo;m doing. Alongside setting up data architecture, moving research along, planning future moves, and comparing and contrasting frameworks (including engineering thinking, skills, accreditation, assessment and professional behaviour), I&rsquo;m eating lunch, listening to Hidetake Takayama, writing this post and trying to figure out what to make for dinner. Pretty much the same as everyone else!"/>
 <meta name="twitter:site" content="@jakekaupp"/>
 
-        <meta property="og:title" content="Blog" />
-<meta property="og:description" content="A Question of Space, a matter of time: Jake Kaupp&#39;s Website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/" />
+        <meta property="og:title" content="I&#39;ll take &#34;Famous Titles&#34; for $400 Alex.  #IVMOOC Week 4" />
+<meta property="og:description" content="Two posts in week, and two weeks of #IVMOOC down! Topical analysis this week, and keeping in theme, here&rsquo;s what I&rsquo;m doing. Alongside setting up data architecture, moving research along, planning future moves, and comparing and contrasting frameworks (including engineering thinking, skills, accreditation, assessment and professional behaviour), I&rsquo;m eating lunch, listening to Hidetake Takayama, writing this post and trying to figure out what to make for dinner. Pretty much the same as everyone else!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/1/01/01/content/blog/2015-02-12-ill-take-famous-titles-for-400-alex-ivmooc-week-4/" />
+
+
 
 
 
@@ -65,9 +67,16 @@
 
 
         
-<meta itemprop="name" content="Blog">
-<meta itemprop="description" content="A Question of Space, a matter of time: Jake Kaupp&#39;s Website">
+<meta itemprop="name" content="I&#39;ll take &#34;Famous Titles&#34; for $400 Alex.  #IVMOOC Week 4">
+<meta itemprop="description" content="Two posts in week, and two weeks of #IVMOOC down! Topical analysis this week, and keeping in theme, here&rsquo;s what I&rsquo;m doing. Alongside setting up data architecture, moving research along, planning future moves, and comparing and contrasting frameworks (including engineering thinking, skills, accreditation, assessment and professional behaviour), I&rsquo;m eating lunch, listening to Hidetake Takayama, writing this post and trying to figure out what to make for dinner. Pretty much the same as everyone else!">
 
+
+
+<meta itemprop="wordCount" content="444">
+
+
+
+<meta itemprop="keywords" content="" />
 
         
 
@@ -253,28 +262,56 @@
 
     
     <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
         
-        
+            <h1><a href="/1/01/01/content/blog/2015-02-12-ill-take-famous-titles-for-400-alex-ivmooc-week-4/">I&#39;ll take &#34;Famous Titles&#34; for $400 Alex.  #IVMOOC Week 4</a></h1>
             
         
-            
         
-            
-        
+    </div>
+</header>
 
-        
-<ul class="actions pagination">
-    
-        <li><a href="/blog/page/2/"
-                class="button big previous">Previous Page</a></li>
-    
+            <div id="content">
+                <p>Two posts in week, and two weeks of #IVMOOC down!
+Topical analysis this week, and keeping in theme, here&rsquo;s what I&rsquo;m doing.  Alongside setting up data architecture, moving research along, planning future moves, and comparing and contrasting frameworks (including engineering thinking, skills, accreditation, assessment and professional behaviour), I&rsquo;m eating lunch, listening to Hidetake Takayama, writing this post and trying to figure out what to make for dinner.
+Pretty much the same as everyone else!</p>
 
-    
-        <li><a href="/blog/page/4/"
-                class="button big next">Next Page</a></li>
-    
-</ul>
+<p>Anyways.  I liked this week, but I got sidetracked with digging into visualizing data from twitter.  In the midst of watching one of the videos, I wanted to see how the #antivaxprof shenanigans were heating up or calming down.  I fired up R, figured out how to use the twitter API through ROAuth and TwitteR, and got to business. This is data from Feb 4th to 11th that contained #antivaxprof. I wanted to see graphically how tweets were being used, as in when tweets were originating and how they were progressing.  Below is the quick and dirty plot of that. Red dots are original tweets, greens are retweets of the same tweet.  Each plotted to the retweet count of the original.</p>
 
+<p><img src="{{ site.url }}/assets/twitter-stuff.png" alt="Twitter Viz" /></p>
+
+<p>Then I wanted to see how this was capturing the attention of the twittersphere, simply by looking at the frequency of tweets per day, and overlaying that with the total retweet count of all those tweets in a day.  (I guess the #IVMOOC workflow is sinking in.)  Enter plyr, and here is the quick and dirty of that.  I see this graph as showing that the public interest of the story declined in both activity and reach over time.  Thing about controversies and social media.  Short bursts of attention that die down, or at least settle only to those most affected.  I&rsquo;m certain that this data is a little biased though, since twitter is just one small slice of the social media globe.</p>
+
+<p><img src="{{ site.url }}/assets/twitter-2.png" alt="Twitter Viz 2" /></p>
+
+<p>Then I went back to actually doing what I was supposed to be doing for #IVMOOC.  I searched the NSF grants database for &ldquo;Engineering Education&rdquo;, and work on extracting and visualizing the word co-occurrence network in the titles.   Had to use a bit of scripting to get things the way I wanted it.</p>
+
+<p>{% highlight python %}
+resizeLinear(references,2,40)
+resizeLinear(weight,.5,5)
+colorize(references,gray,black)
+g.edges.color = &ldquo;34,94,168&rdquo;
+for n in g.nodes:
+    n.x = n.xpos*40
+    n.y = n.ypos*40
+    n.strokecolor = n.color
+    if (n.references &gt; 20):
+        n.labelvisible = true
+{% endhighlight %}</p>
+
+<p>A bit of time and some cleaning up in Affinity Designer, and I submitted this:</p>
+
+<p><img src="{{ site.url }}/assets/assignment-4.png" alt="IVMOOC Assignment 4" /></p>
+
+<p>I can see a lot of potential uses for this in my own work and research.  Fantastic week.  Next up: the midterm.  </p>
+
+<p><em>(Cue ominous music)</em></p>
+
+            </div>
+        </article>
     </div>
     
 <section id="sidebar">
