@@ -1,5 +1,6 @@
 ---
 title: 'Goofus and Gallant: Charts'
+date: '2015-10-01'
 slug: content//post/2015-10-01-goofus-and-gallant-charts
 ---
 

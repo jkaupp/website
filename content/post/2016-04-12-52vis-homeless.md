@@ -1,5 +1,6 @@
 ---
 title: 52Vis - Homeless
+date: '2016-04-12'
 slug: content//post/2016-04-12-52vis-homeless
 ---
 

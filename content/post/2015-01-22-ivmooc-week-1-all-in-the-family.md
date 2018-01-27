@@ -1,5 +1,6 @@
 ---
 title: '#IVMOOC Week 1: All in the family'
+date: '2015-01-22'
 slug: content//post/2015-01-22-ivmooc-week-1-all-in-the-family
 ---
 So I've made it through the first week of #IVMOOC. Gold stars all around!

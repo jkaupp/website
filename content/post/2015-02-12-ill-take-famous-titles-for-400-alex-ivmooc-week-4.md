@@ -1,5 +1,6 @@
 ---
 title: 'I''ll take "Famous Titles" for $400 Alex.  #IVMOOC Week 4'
+date: '2015-02-12'
 slug: content//post/2015-02-12-ill-take-famous-titles-for-400-alex-ivmooc-week-4
 ---
 Two posts in week, and two weeks of #IVMOOC down!

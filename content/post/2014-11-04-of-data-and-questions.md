@@ -1,5 +1,6 @@
 ---
 title: Of data and questions
+date: '2014-11-04'
 slug: content//post/2014-11-04-of-data-and-questions
 ---
 

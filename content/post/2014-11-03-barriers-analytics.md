@@ -1,5 +1,6 @@
 ---
 title: Barriers & Analytics
+date: '2014-11-03'
 slug: content//post/2014-11-03-barriers-analytics
 ---
 *This post is addressing the first assignment/question for #DALMOOC*

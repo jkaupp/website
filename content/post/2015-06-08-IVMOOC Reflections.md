@@ -1,5 +1,6 @@
 ---
 title: IVMOOC Reflections
+date: '2015-06-08'
 slug: content//post/2015-06-08-IVMOOC Reflections
 ---
 

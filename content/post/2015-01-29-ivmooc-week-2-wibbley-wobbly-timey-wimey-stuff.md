@@ -1,5 +1,6 @@
 ---
 title: '#IVMOOC Week 2: Wibbley-wobbly timey-wimey stuff'
+date: '2015-01-29'
 slug: content//post/2015-01-29-ivmooc-week-2-wibbley-wobbly-timey-wimey-stuff
 ---
 

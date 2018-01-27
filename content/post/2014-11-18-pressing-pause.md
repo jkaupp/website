@@ -1,5 +1,6 @@
 ---
 title: Pressing pause
+date: '2014-11-18'
 slug: content//post/2014-11-18-pressing-pause
 ---
 Dear #Dalmooc,

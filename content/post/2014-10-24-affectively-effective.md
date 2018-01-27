@@ -1,5 +1,6 @@
 ---
 title: Affectively effective
+date: '2014-10-24'
 slug: content//post/2014-10-24-affectively-effective
 ---
 
