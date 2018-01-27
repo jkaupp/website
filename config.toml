@@ -72,8 +72,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   paragraph = "<i>hic sunt dracones</i>"
 
-  about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
-
+  about     = "Proud husband & father. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Assessment professional. Je suis un canard geant."  
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
@@ -82,7 +81,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
     imperfect = true
-    width = 100
+    width = 100px
     alt       = "je suis un canard geant"
 
 [params.postAmount]
