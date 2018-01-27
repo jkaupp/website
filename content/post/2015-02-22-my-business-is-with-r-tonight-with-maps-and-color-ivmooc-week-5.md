@@ -22,7 +22,8 @@ Week 5.  For this week, I pretty much read the book chapter rather than watch v
 
 Below is my R code:
 
-{{< highlight r>>}}
+{{< highlight r >}}
+
 library(plyr)
 library(magrittr)
 library(treemap)
@@ -35,7 +36,7 @@ library(ggplot2)
 # If I had a better knowledge of regular expressions, I would subset the n.files data frame
 # by a Directory structure to the depth I would like (1)
 
-path<-"~/OwnCloud/Graduate Studies Research"
+path <- "~/OwnCloud/Graduate Studies Research"
 dirs <- list.dirs(path)
 
 num.files <- function(x) {
@@ -73,6 +74,7 @@ treemapify(data3,
 ggplotify %>%
  + guides(fill=guide_legend("# of Files")) %>%
  + ggtitle(bquote(atop(.("Treemap Visualization"), atop(italic(.("Graduate Studies Directory, Depth = 1")), ""))))
+ 
 {{< / highlight >}}
 
 And here is the resulting visualization:
