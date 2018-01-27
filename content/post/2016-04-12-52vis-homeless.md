@@ -32,7 +32,7 @@ This shows overall that funding has only been increasing over the years and the 
 
 Next up, the State-level results.  The homeless population and funding data were aggregated by year and state, normalized to population and displayed per 100,000 people.  They are plotted similarly to the National level, with the addition of small multiples for each state.  The multiples are arranged according to the funding they received.
 
-![State](/img/state_level_hud_coc.svg)
+!["State"](/img/state_level_hud_coc.svg)
 
 This illustrates a vastly different picture than the National level.  It shows wild swings in both funding and homeless population and directly challenges the Big Picture view of throwing money at a problem.  Look at the the first three panels, look at Rhode Island, Vermont and Alaska.  Something really odd is happening that warrants a closer look.  Ultimately, these differences and odd relationships lend support to my initial statement that this is far more complex and requires a great deal more thought, investigation and expertise than I can provide.  It also directly challenges one unstated assumption of my own, that the funding and homeless population are variables that are in-phase, when most likely they are lagged in an cyclical cause-effect loop.
 

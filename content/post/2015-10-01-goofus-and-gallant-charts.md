@@ -12,7 +12,7 @@ The other day I was provided a sample report that had some visualizations of cur
 
 Here's Goofus' charts:
 
-![Goofus' Chart](/img/goofus.png)
+!["Goofus' Chart"](/img/goofus.png)
 
 Some background:  The 2 letter codes on the x-axis represent specific outcomes.  The I-D-A, represents the level at which the outcome is developed (I = introduced, D = developed, A = advanced).  On the second chart, the semester is given by numbers 1-8, with a full 4 year program being comprised of 8 semesters.
 
@@ -26,7 +26,7 @@ I think Goofus organized the charts incorrectly.  They appear as: Meso-Micro-Mac
 
 So I decided play the part of Gallant and improve them (or at least what I consider to be improvements).
 
-![Gallant's Chart](/img/gallant.png)
+!["Gallant's Chart"](/img/gallant.png)
 
 First, I changed the order from Macro-Meso-Micro, which gives the user a sense of drill-down in view.  Second I changed the font to a serif, because I find those easier to read. (Gill Sans being an exception due to purposeful design).  Lastly, rather than present these as stark bars (which they are), I applied a Tuftian principle and overlaid a white grid.  This allows for easier comparison and clear depiction of the units.
 
