@@ -10,9 +10,6 @@ pluralizeListTitles = false
 enableEmoji =  true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
-
 [params]
   # Sets the meta tag description
   description          = "A Question of Space, a matter of time: Jake Kaupp's Website"
