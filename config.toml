@@ -28,8 +28,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   rssAppearAtTop       = false
   rssAppearAtBottom    = true
   # Sets Social Media icons to appear on the sidebar
-  socialAppearAtTop    = false
-  socialAppearAtBottom = true
+  socialAppearAtTop    = true
+  socialAppearAtBottom = false
   # Sets Categories to sort by number of posts instead of alphabetical
   categoriesByCount    = true
   # Sets Estimated Reading Time to appear in post headers
@@ -81,7 +81,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
     imperfect = true
-    width = "100px"
+    width = "500px"
     alt       = "je suis un canard geant"
 
 [params.postAmount]
