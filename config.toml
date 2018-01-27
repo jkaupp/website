@@ -11,7 +11,7 @@ enableEmoji =  true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    blog = "/:year/:month/:day/:slug/"
 
 [params]
   # Sets the meta tag description
