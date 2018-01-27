@@ -1,6 +1,6 @@
 ---
 title: Affectively effective
-slug: content//post/2014/10/24/affectively-effective
+slug: content//post/2014-10-24-affectively-effective
 ---
 
 I'd like to consider myself as a self-directed, life-long learner. Rather, I would now after undergrad, grad school with a plethora of job related learning thrown in.  I didn't start that way, I had to learn.  I had to create my own meaning, develop the regulation, control my own motivation, deal with my own setbacks, reflect on my learning, reflect on my behaviour.  Essentially scale the summit of bloom's taxonomy, and make my way through liminality until I found the golden lightbulb of a transformative experience. (I now win the bet of educational jargon laced into metaphor).
