@@ -19,7 +19,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "Home"
   # Sets where "View More Posts" links
-  viewMorePostLink     = "/post/"
+  viewMorePostLink     = "/blog/"
 
 # Optional Params
   # Sets navbarTitle to match the section of the website
