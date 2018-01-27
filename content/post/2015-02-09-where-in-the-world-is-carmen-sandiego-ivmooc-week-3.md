@@ -31,7 +31,7 @@ ggmap(usa) +
   xlab("Longitude") +
   ylab("Latitude")
   
-{{< end highlight >}}
+{{< / highlight >}}
 
 
 I wanted to explore at both the state level and at the city level, but ran into those limits, and the amount of time I could spend on this.  Maybe in the future, I'll delve into this a bit more and expand the code to geocode by the zip in R, and then plot those on the US map.    My visualization:
