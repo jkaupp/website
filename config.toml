@@ -78,11 +78,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   [params.intro.pic]
     src       = "/img/main/logo.jpeg"
     # Sets Image to be a cirlce
-    circle    = false
+    circle    = true
     # Sets Image to be Future Imperfect's hexagon
-    imperfect = true
-    width = 100px
-    height = 100px
+    imperfect = false
     alt       = "je suis un canard geant"
 
 [params.postAmount]
