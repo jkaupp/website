@@ -26,7 +26,7 @@ I thought this was best represented at two levels, National and State.  This pro
 
 First up, the National "Big Picture". The homeless population and funding data were aggregated by year and charted homeless population vs coc funding and with a spline connecting each point. (Thanks to @hrbrmstr for the ggalt package and the tip on geom_xspline2)
 
-![National](/img/National_level_hud_coc.svg)
+![National](/img/national_level_hud_coc.svg)
 
 This shows overall that funding has only been increasing over the years and the homeless population has been declining.  However, what is going on 2010 with the increase in the homeless population?  This is where further research and additional analysis can shed some light on a situation.  My initial cursory research reveals that this was the year ending the Iraq war, the 'flash crash', and the bottoming of the jobs market post recession.  That's a lot of causes, should someone with more expertise want to keep going.
 
