@@ -1,6 +1,6 @@
 ---
 title: Pressing pause
-slug: content//blog/2014-11-18-pressing-pause
+slug: content//post/2014-11-18-pressing-pause
 ---
 Dear #Dalmooc,
 

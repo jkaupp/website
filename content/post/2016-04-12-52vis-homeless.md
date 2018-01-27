@@ -1,11 +1,11 @@
 ---
 title: 52Vis - Homeless
-slug: content//blog/2016-04-12-52vis-homeless
+slug: content//post/2016-04-12-52vis-homeless
 ---
 
 I've a confession to make.  I'm a terrible blogger.  I do so out of need and interest, and I've a lot of the latter but little of the former.
 
->"The game has changed." <cite>Clu</cite>
+>"The game has changed." <cite>Clu</cite>  
 
 (Yes, Tron Returns. Get over it.)
 
@@ -13,13 +13,13 @@ Bob Rudis, @hrbrmstr, a useR, visualization practitioner, data-driven security e
 
 This week's task is outlined on [hbrmstr's blog](https://rud.is/b/2016/04/06/52vis-week-2-2016-week-14-honing-in-on-the-homeless/).   In short its looking at US Department of Housing data on the homeless population in the USA and producing a truthful, insightful and effective visualization of the data.  This is an emotionally charged data set and I kept thinking about it all week.  Not only from the perspective of what questions I wanted to answer with my visualization, but from the perspective of someone who's been fortunate enough to have a home, a family and a great deal of opportunity and what that _means_ to me.
 
-Some may say that data is just numbers, and that it's hard to connect to it.   I don't think it is.  Data always represents something, and in this case it represents real people in a terrible situation.  I believe that keeping that in mind connects you to the data, keeps you honest and motivates you.
+Some may say that data is just numbers, and that it's hard to connect to it.   I don't think it is.  Data always represents something, and in this case it represents real people in a terrible situation.  I believe that keeping that in mind connects you to the data, keeps you honest and motivates you.  
 
 > "that's all I have to say about that" <cite>Forrest Gump</cite>
 
 I explored the data, producing scatterplot matrices and looking for interesting relationships.  Then I realized that I wanted to see what was being done to help the homeless people.  Most US government funding is made public, so I took a walk over to the Department of Housing, found the Community of Care Program grant awards by state and integrated that into the analysis.  (I don't know if this is cheating, but I wanted to see the funding and its effects on the homeless population).  This is still VASTLY incomplete and only sheds some light on a small sliver of the entire story (support and funding don't fix the problem, but it can help).  This line of analysis is very nuanced and very deep.  This little bit of work is a grain of sand in the Sahara.
 
-I'm a fan of Alberto Cairo and his work.  His books are fantastic, great reads and are highly recommended.  In "The Functional Art" he used an image from Epoca magazine that is a scatterplot with each point representing summary values for a year on a separate x and y scale.  These can be connected illustrating how these relationships change over the years.  I don't know what it's officially called, but I call it a temporal scatterplot.  I thought this would be a fantastic fit for my intended visualization.
+I'm a fan of Alberto Cairo and his work.  His books are fantastic, great reads and are highly recommended.  In "The Functional Art" he used an image from Epoca magazine that is a scatterplot with each point representing summary values for a year on a separate x and y scale.  These can be connected illustrating how these relationships change over the years.  I don't know what it's officially called, but I call it a temporal scatterplot.  I thought this would be a fantastic fit for my intended visualization.    
 
 I thought this was best represented at two levels, National and State.  This provides the "Big Picture" as well as the capturing the smaller stories that differ between the states.  I believe if you only present one of these, it's terribly misleading as the aggregate always smooths out the individual bumps and assumes homogeneity where none exists.
 

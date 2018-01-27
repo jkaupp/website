@@ -1,6 +1,6 @@
 ---
 title: '#IVMOOC Week 2: Wibbley-wobbly timey-wimey stuff'
-slug: content//blog/2015-01-29-ivmooc-week-2-wibbley-wobbly-timey-wimey-stuff
+slug: content//post/2015-01-29-ivmooc-week-2-wibbley-wobbly-timey-wimey-stuff
 ---
 
 I'm liking this course.  The videos are easy to listen to and are in nice manageable chunks that I can watch them while making dinner, or on a quick break from work.  I especially liked the discussion of the burst-detection model this week, although I would have enjoyed a more in-depth discussion on how the model works.  I'm filing that for future research and reading once I get the opportunity to explore the textbook and associated papers.  The hands on videos this week were fantastic, and offered a great tutorial to accomplish this analysis in Sci2.  Below is my temporal bar graph/burst analysis of Mesothelioma, stopping at the year 2007.  I might redo it, given some time, as I'm concerned about the generated scale being a bit wonky (two entries for zero?).

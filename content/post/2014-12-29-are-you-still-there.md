@@ -1,6 +1,6 @@
 ---
 title: Are you still there?
-slug: content//blog/2014-12-29-are-you-still-there
+slug: content//post/2014-12-29-are-you-still-there
 ---
 
 Sometimes a simple pause leads to a time-out.   Juggling parenthood, my normal hatrack of jobs, plus teaching put way to many demands on my time to devote it to #dalmooc, despite it being a very interesting experience.  I kept up viewing some hangouts and videos when I could, but didn't devote any effort to the assignments and community experience.  So for all of my lofty goals, I fell very short in the application/implementation of them.

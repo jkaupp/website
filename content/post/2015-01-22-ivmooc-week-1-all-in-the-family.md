@@ -1,6 +1,6 @@
 ---
 title: '#IVMOOC Week 1: All in the family'
-slug: content//blog/2015-01-22-ivmooc-week-1-all-in-the-family
+slug: content//post/2015-01-22-ivmooc-week-1-all-in-the-family
 ---
 So I've made it through the first week of #IVMOOC. Gold stars all around!
 I did learn some new things, new tricks and new tools from the lectures and I'm a sucker for a good framework.  Anything that can help me organize chaos in a logical, well though out manner appeals to the engineer in me. As an avid R and RStudio user, I love the SCI2 tool, and how it melds data wrangling aspects with the visualizations.  I did have some issues with the mac version of the tool, with some settings in GUESS not working correctly.

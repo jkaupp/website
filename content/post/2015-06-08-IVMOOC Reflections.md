@@ -1,6 +1,6 @@
 ---
 title: IVMOOC Reflections
-slug: content//blog/2015-06-08-IVMOOC Reflections
+slug: content//post/2015-06-08-IVMOOC Reflections
 ---
 
 So IVMOOC has been over for quite some time now.  Looking back on the experience, I consider it to be a personal success.  The first half of the course was interesting, and gave a good space for practise with tools and refinement of the skill set needed for visualization.  The midterm and final were shenanigan-laden and badly designed assessment, but the instructors have made great steps to address the issues and commit to improvements.

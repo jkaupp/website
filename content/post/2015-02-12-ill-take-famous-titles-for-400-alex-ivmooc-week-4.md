@@ -1,6 +1,6 @@
 ---
 title: 'I''ll take "Famous Titles" for $400 Alex.  #IVMOOC Week 4'
-slug: content//blog/2015-02-12-ill-take-famous-titles-for-400-alex-ivmooc-week-4
+slug: content//post/2015-02-12-ill-take-famous-titles-for-400-alex-ivmooc-week-4
 ---
 Two posts in week, and two weeks of #IVMOOC down!
 Topical analysis this week, and keeping in theme, here's what I'm doing.  Alongside setting up data architecture, moving research along, planning future moves, and comparing and contrasting frameworks (including engineering thinking, skills, accreditation, assessment and professional behaviour), I'm eating lunch, listening to Hidetake Takayama, writing this post and trying to figure out what to make for dinner.
@@ -13,6 +13,7 @@ Anyways.  I liked this week, but I got sidetracked with digging into visualizin
 Then I wanted to see how this was capturing the attention of the twittersphere, simply by looking at the frequency of tweets per day, and overlaying that with the total retweet count of all those tweets in a day.  (I guess the #IVMOOC workflow is sinking in.)  Enter plyr, and here is the quick and dirty of that.  I see this graph as showing that the public interest of the story declined in both activity and reach over time.  Thing about controversies and social media.  Short bursts of attention that die down, or at least settle only to those most affected.  I'm certain that this data is a little biased though, since twitter is just one small slice of the social media globe.
 
 ![Twitter Viz 2]({{ site.url }}/assets/twitter-2.png)
+
 
 Then I went back to actually doing what I was supposed to be doing for #IVMOOC.  I searched the NSF grants database for "Engineering Education", and work on extracting and visualizing the word co-occurrence network in the titles.   Had to use a bit of scripting to get things the way I wanted it.
 

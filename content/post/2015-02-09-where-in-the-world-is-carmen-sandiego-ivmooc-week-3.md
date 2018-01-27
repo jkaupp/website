@@ -1,6 +1,6 @@
 ---
 title: 'Where in the world is Carmen Sandiego?: #IVMOOC Week 3'
-slug: content//blog/2015-02-09-where-in-the-world-is-carmen-sandiego-ivmooc-week-3
+slug: content//post/2015-02-09-where-in-the-world-is-carmen-sandiego-ivmooc-week-3
 ---
 Getting through this week was a bit tough, not due to content or complexity, but due to life, work and winter.  Being the only well parent is a lot of work.  Couple that with deadlines, grant writing and research sessions made for very little free time.  I made it though!
 

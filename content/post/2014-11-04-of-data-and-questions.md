@@ -1,6 +1,6 @@
 ---
 title: Of data and questions
-slug: content//blog/2014-11-04-of-data-and-questions
+slug: content//post/2014-11-04-of-data-and-questions
 ---
 
 *This post was for the 2nd week of #DALMOOC*

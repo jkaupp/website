@@ -1,6 +1,6 @@
 ---
 title: 'My business is with R tonight, with maps and color. #IVMOOC Week 5'
-slug: content//blog/2015-02-22-my-business-is-with-r-tonight-with-maps-and-color-ivmooc-week-5
+slug: content//post/2015-02-22-my-business-is-with-r-tonight-with-maps-and-color-ivmooc-week-5
 ---
 So the midterm has me a bit disheartened.  Not because of difficulty, but because of the miscommunication between the admin and the students.  In Canvas the midterm description was set to Feb 16th 8pm EST deadline.  After putting my son to bed, and while making dinner, I logged into Canvas and rushed to do the midterm.  Flying through it, I ended up with a 21.  Then I see the next day on twitter that it's due on the 19th, yet this wasn't reflected on Canvas.  Had I known this, I would have set aside a better time to actually write the midterm, un-hurried and would have done much better. I had some misclicks, skipped questions not addressed and some bonehead mistakes (For all of the graphic work and video editing I've done why in the blue hell would I put saturation down as Qualitative? Derp.)
 
