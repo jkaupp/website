@@ -90,7 +90,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     sidebar = 3
 
 # Sets the menu items in the navigation bar
-# Identifier prepends a Font Awesome icon to the menu item
+# Identifier prepends a Font Awesoxme icon to the menu item
  [[menu.main]]
         name = "Blog"
         url = "/post/"
