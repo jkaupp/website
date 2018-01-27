@@ -73,7 +73,7 @@ treemapify(data3,
 ggplotify %>%
  + guides(fill=guide_legend("# of Files")) %>%
  + ggtitle(bquote(atop(.("Treemap Visualization"), atop(italic(.("Graduate Studies Directory, Depth = 1")), ""))))
-{{</ highlight>}}
+{{< / highlight >}}
 
 And here is the resulting visualization:
 
