@@ -9,7 +9,7 @@ After watching the videos and hands-on clips for the week, I felt tackling this 
 
 After that it was pretty easy.  I aggregated at the state level, as the SCI2 geocoder gave me some errors when encoding the zip codes, or the city level.  Pulled up a map of the continental USA, and plotted the amount of funding indicating amounts with both size and color.  The code I used is below:
 
-{% highlight r %}
+{{< highlight r >}}
 library(plyr)
 library(gdata)
 library(ggmap)
@@ -30,11 +30,12 @@ ggmap(usa) +
   ggtitle("Geocoding of NSF Funding of Engineering Education Research") +
   xlab("Longitude") +
   ylab("Latitude")
-{% endhighlight %}
+{{< endhighlight >}}
+
 
 I wanted to explore at both the state level and at the city level, but ran into those limits, and the amount of time I could spend on this.  Maybe in the future, I'll delve into this a bit more and expand the code to geocode by the zip in R, and then plot those on the US map.    My visualization:
 
-![Geospatial Assignment]({{ site.url }}/assets/geospatial-assignment.png)
+![Geospatial Assignment](/img/geospatial-assignment.png)
 
 All in all, a fun week.  The bits I found most useful:  a nice overview of colors and their use in geospatial maps and the hands-on sessions.
 Next up, week 4 and the midterm!

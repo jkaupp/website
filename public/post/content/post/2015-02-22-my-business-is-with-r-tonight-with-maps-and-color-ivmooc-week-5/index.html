@@ -68,7 +68,7 @@
 
 <meta itemprop="datePublished" content="2015-02-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-02-22T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="629">
+<meta itemprop="wordCount" content="627">
 
 
 
@@ -435,7 +435,7 @@
 
 <p>Below is my R code:</p>
 
-<p>{% highlight r %}
+<p>{{&lt; highlight r&gt;&gt;}}
 library(plyr)
 library(magrittr)
 library(treemap)
@@ -495,11 +495,11 @@ data3$count &lt;- cut(data3$count,c(0, 50, 100, 150, 300, 2200),labels=c(&ldquo;
 ggplotify %&gt;%
  + guides(fill=guide_legend(&ldquo;# of Files&rdquo;)) %&gt;%
  + ggtitle(bquote(atop(.(&ldquo;Treemap Visualization&rdquo;), atop(italic(.(&ldquo;Graduate Studies Directory, Depth = 1&rdquo;)), &ldquo;&rdquo;))))
- {% endhighlight %}</p>
+{{&lt; endhighlight&gt;}}</p>
 
 <p>And here is the resulting visualization:</p>
 
-<p><img src="{{ site.url }}/assets/assignment-5.png" alt="IVMOOC Assignment 5" /></p>
+<p><img src="/img/assignment-5.png" alt="IVMOOC Assignment 5" /></p>
 
   </div>
 

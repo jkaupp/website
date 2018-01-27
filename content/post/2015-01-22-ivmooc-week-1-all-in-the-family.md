@@ -27,6 +27,6 @@ for e in g.edges:
 
 That lead me to the basic visualization, that I quickly pulled into [Affinity Designer](http://affinity.serif.com/en-gb/), my vector art and design instrument of choice, and made this:
 
-![Relationships of Florentine Families Visualized](img/ivmooc-ass-12.png)
+![Relationships of Florentine Families Visualized](/img/ivmooc-ass-12.png)
 
 This was a lot of fun to play around with, and dust off some skills that I haven't used or applied in a while.  Looking forward to the rest of the course, learning and interacting with everyone!

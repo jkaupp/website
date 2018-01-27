@@ -10,6 +10,6 @@ I really don't know which one is true.  I think it's a bit of all 3.  Either w
 
 The assignment was a different flavour of network, which holds a lot of implications for future use.  I fully intend to keep pursuing these techniques with different data sources, as it is a unique way to show the collaboration and impacts of scholarly work.  I really think using this in the context of an institution or a historical view of a conference is very useful and informative for many stakeholders.  My co-occurence network involved Carl Wieman and the NSF database, shown below:
 
-![So tired of your #%!@ Carl]({{ site.url }}/assets/week-6-network.png)
+![So tired of your #%!@ Carl](/img/week-6-network.png)
 
 I'm really looking forward to the projects.  The comic book fan mail database really appeals to me, from my love of comic books and some ideas that I have about the utility and potential impact of visualizations.  If anyone wants to team up, let me know!

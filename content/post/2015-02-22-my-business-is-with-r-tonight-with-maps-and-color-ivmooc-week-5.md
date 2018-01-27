@@ -22,7 +22,7 @@ Week 5.  For this week, I pretty much read the book chapter rather than watch v
 
 Below is my R code:
 
-{% highlight r %}
+{{< highlight r>>}}
 library(plyr)
 library(magrittr)
 library(treemap)
@@ -73,8 +73,8 @@ treemapify(data3,
 ggplotify %>%
  + guides(fill=guide_legend("# of Files")) %>%
  + ggtitle(bquote(atop(.("Treemap Visualization"), atop(italic(.("Graduate Studies Directory, Depth = 1")), ""))))
- {% endhighlight %}
+{{< endhighlight>}}
 
 And here is the resulting visualization:
 
-![IVMOOC Assignment 5]({{ site.url }}/assets/assignment-5.png)
+![IVMOOC Assignment 5](/img/assignment-5.png)

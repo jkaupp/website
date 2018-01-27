@@ -77,7 +77,7 @@ Bob Rudis, @hrbrmstr, a useR, visualization practitioner, data-driven security e
 
 <meta itemprop="datePublished" content="2016-04-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="983">
+<meta itemprop="wordCount" content="975">
 
 
 
@@ -441,19 +441,19 @@ Bob Rudis, @hrbrmstr, a useR, visualization practitioner, data-driven security e
 
 <p>I explored the data, producing scatterplot matrices and looking for interesting relationships.  Then I realized that I wanted to see what was being done to help the homeless people.  Most US government funding is made public, so I took a walk over to the Department of Housing, found the Community of Care Program grant awards by state and integrated that into the analysis.  (I don&rsquo;t know if this is cheating, but I wanted to see the funding and its effects on the homeless population).  This is still VASTLY incomplete and only sheds some light on a small sliver of the entire story (support and funding don&rsquo;t fix the problem, but it can help).  This line of analysis is very nuanced and very deep.  This little bit of work is a grain of sand in the Sahara.</p>
 
-<p>I&rsquo;m a fan of Alberto Cairo and his work.  His books are fantastic, great reads and are highly recommended.  In &ldquo;The Functional Art&rdquo; he used an image from Epoca magazine that is a scatterplot with each point representing summary values for a year on a separate x and y scale.  These can be connected illustrating how these relationships change over the years.  I don&rsquo;t know what it&rsquo;s officially called, but I call it a temporal scatterplot.  I thought this would be a fantastic fit for my intended visualization.</p>
+<p>I&rsquo;m a fan of Alberto Cairo and his work.  His books are fantastic, great reads and are highly recommended.  In &ldquo;The Functional Art&rdquo; he used an image from Epoca magazine that is a scatterplot with each point representing summary values for a year on a separate x and y scale.  These can be connected illustrating how these relationships change over the years.  It&rsquo;s called a connected scatterplot and I thought this would be a fantastic fit for my intended visualization.</p>
 
 <p>I thought this was best represented at two levels, National and State.  This provides the &ldquo;Big Picture&rdquo; as well as the capturing the smaller stories that differ between the states.  I believe if you only present one of these, it&rsquo;s terribly misleading as the aggregate always smooths out the individual bumps and assumes homogeneity where none exists.</p>
 
 <p>First up, the National &ldquo;Big Picture&rdquo;. The homeless population and funding data were aggregated by year and charted homeless population vs coc funding and with a spline connecting each point. (Thanks to @hrbrmstr for the ggalt package and the tip on geom_xspline2)</p>
 
-<p><img src="{{ site.url }}/assets/National_level_hud_coc.svg" alt="National" /></p>
+<p><img src="/img/National_level_hud_coc.svg" alt="National" /></p>
 
 <p>This shows overall that funding has only been increasing over the years and the homeless population has been declining.  However, what is going on 2010 with the increase in the homeless population?  This is where further research and additional analysis can shed some light on a situation.  My initial cursory research reveals that this was the year ending the Iraq war, the &lsquo;flash crash&rsquo;, and the bottoming of the jobs market post recession.  That&rsquo;s a lot of causes, should someone with more expertise want to keep going.</p>
 
 <p>Next up, the State-level results.  The homeless population and funding data were aggregated by year and state, normalized to population and displayed per 100,000 people.  They are plotted similarly to the National level, with the addition of small multiples for each state.  The multiples are arranged according to the funding they received.</p>
 
-<p><img src="{{ site.url }}/assets/state_level_hud_coc.svg" alt="State" /></p>
+<p><img src="/img/state_level_hud_coc.svg" alt="State" /></p>
 
 <p>This illustrates a vastly different picture than the National level.  It shows wild swings in both funding and homeless population and directly challenges the Big Picture view of throwing money at a problem.  Look at the the first three panels, look at Rhode Island, Vermont and Alaska.  Something really odd is happening that warrants a closer look.  Ultimately, these differences and odd relationships lend support to my initial statement that this is far more complex and requires a great deal more thought, investigation and expertise than I can provide.  It also directly challenges one unstated assumption of my own, that the funding and homeless population are variables that are in-phase, when most likely they are lagged in an cyclical cause-effect loop.</p>
 
