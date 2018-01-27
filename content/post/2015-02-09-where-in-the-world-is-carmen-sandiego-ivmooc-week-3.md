@@ -16,7 +16,7 @@ library(ggmap)
 library(ggplot2)
 
 setwd("~/MOOCs/IVMOOC";)
-data <- read.csv("NSF Master LandL.csv";)
+data <- read.csv("NSF Master LandL.csv")
 
 data.state <-ddply(data, .(state, Latitude, Longitude), summarize, expected_total_amount = sum(expected_total_amount))
 usa <- get_map(location = 'united states', zoom = 4, color="color", maptype='road')
@@ -30,7 +30,8 @@ ggmap(usa) +
   ggtitle("Geocoding of NSF Funding of Engineering Education Research") +
   xlab("Longitude") +
   ylab("Latitude")
-{{< endhighlight >}}
+  
+{{< end highlight >}}
 
 
 I wanted to explore at both the state level and at the city level, but ran into those limits, and the amount of time I could spend on this.  Maybe in the future, I'll delve into this a bit more and expand the code to geocode by the zip in R, and then plot those on the US map.    My visualization:
