@@ -106,6 +106,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     [[menu.main]]
         name = "Portfolio"
         url = "/portfolio/"
+        identifier = "fa fa-briefcase"
         weight = 4    
         
 
