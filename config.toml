@@ -7,12 +7,17 @@ paginate = 3
 disqusShortname = "shortname"
 googleAnalytics = ""
 pluralizeListTitles = false
+enableEmoji =  true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
 
 [params]
   # Sets the meta tag description
-  description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+  description          = "A Question of Space, a matter of time: Jake Kaupp's Website"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "Future Imperfect"
+  navbarTitle          = "Home"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
 
@@ -127,47 +132,46 @@ pluralizeListTitles = false
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github           = "jpescador/hugo-future-imperfect"
+  github           = "jkaupp"
   gitlab           = ""
-  stackoverflow    = "" # User Number
+  stackoverflow    = "3961477/jake-kaupp"
   bitbucket        = ""
   jsfiddle         = ""
   codepen          = ""
   # Visual Art Communities
   deviantart       = ""
-  flickr           = "example"
+  flickr           = ""
   behance          = ""
   dribbble         = ""
   # Publishing Communities
   wordpress        = ""
   medium           = ""
   # Professional/Business Oriented Communities
-  linkedin         = "example"
-  linkedin_company = "examplebusiness"
+  linkedin         = "jakekaupp"
+  linkedin_company = ""
   foursquare       = ""
   xing             = ""
   slideshare       = ""
   # Social Networks
-  facebook         = "example"
+  facebook         = ""
   googleplus       = ""
-  reddit           = "example"
+  reddit           = ""
   quora            = ""
   youtube          = ""
   vimeo            = ""
-  whatsapp         = "" # WhatsApp Number
-    # WeChat and QQ need testing.
+  whatsapp         = "" 
     wechat         = ""
     qq             = "" # User ID Number
   instagram        = "example"
   tumblr           = ""
-  twitter          = "example"
+  twitter          = "jakekaup"
   skype            = ""
   snapchat         = ""
-  pinterest        = "example"
-  telegram         = "example"
+  pinterest        = ""
+  telegram         = ""
   vine             = ""
-  googlescholar    = ""
+  googlescholar    = "L40AsJoAAAAJ"
   orcid            = ""
-  researchgate     = "example"    
+  researchgate     = "Jake_Kaupp"    
   # Email
-  email            = "example"
+  email            = "jkaupp@gmail.com"
