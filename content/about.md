@@ -1,4 +1,8 @@
-
+---
+title: Here's a little story about a man named Jed...
+date: '2018-01-28'
+slug: content//about
+---
 ## tl;dr:
 
 Proud husband & father. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Assessment professional. Je suis un canard geant." 
