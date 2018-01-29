@@ -1,9 +1,9 @@
 
-##tl;dr:
+## tl;dr:
 
 Proud husband & father. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Assessment professional. Je suis un canard geant." 
 
-##For those that want to know a bit more about me:
+## For those that want to know a bit more about me:
 
 I am a Biomechanical engineer, with a vastly mispent youth spent developing tech skills.  I was always intersted in programming and worked for a combined three years of internships in IT in supply chain for a major Canadian retailer.  That developed and polished a lot of the skills that I routinely use in my day-to-day job.
 
