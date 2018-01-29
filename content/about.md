@@ -1,7 +1,6 @@
 ---
 title: Here's a little story about a man named Jed...
 date: '2018-01-28'
-slug: content//about
 ---
 ## tl;dr:
 
