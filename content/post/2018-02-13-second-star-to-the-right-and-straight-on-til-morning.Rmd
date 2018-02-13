@@ -23,11 +23,19 @@ Johnny: "You've won the next topic for a blog post!"
 
 I wanted to draw a little more attenion to starbrgazing and just how much you can discover by using the more social aspect of github, following people, and a pile of IFTTT alerts.
 
-```{r setup}
+```{r setup, echo = FALSE}
 library(gh)
 library(tidyverse)
 library(lubridate)
 library(viridis)
+library(glue)
+library(nord)
+library(jkmisc)
+library(knitr)
+library(ggrepel)
+
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.width = 10, fig.height = 5)
+
 
 hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .limit = Inf) 
 
@@ -41,22 +49,49 @@ stars_tbl <- tibble(name = map_chr(hrbr_stars, "name"),
                     index = rev(seq_along(name)))
 ```
 
-```{r scatter}
 
-ggplot(stars_tbl, aes(x = created, y = stargazers, color = ifelse(forks == 0, 1, log(forks)))) +
-  geom_point() +
-  scale_color_viridis() +
-  scale_y_log10()
+
+```{r languages}
+
+top_languages <- stars_tbl %>% 
+  filter(!is.na(language)) %>% 
+  count(language) %>% 
+  top_n(5, n) %>% 
+  pull(language)
+
+
+stars_tbl %>%
+  mutate(year = year(created),
+         month = month(created)) %>% 
+  count(year, month, language) %>% 
+  complete(year, month, language, fill = list(n = 0)) %>% 
+  mutate(year = dmy(glue("01-{month}-{year}")),
+         fill = ifelse(language == "R", "R", "notR")) %>%
+  filter(language %in% top_languages) %>% 
+  ggplot(., aes(x = year, y = n)) +
+  geom_area(aes(fill = fill), color = "grey20", size = 0.1, show.legend = FALSE) +
+  scale_y_continuous(limits = c(0, 20)) +
+  scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
+  facet_wrap(~language, nrow = 1) +
+  theme_jk()
 
 ```
 
+
 ```{r scatter}
 
-stars_tbk %>%
+scatter_data <- stars_tbl %>% 
+  filter(language == "R") %>% 
+  mutate(log_size = ifelse(forks == 0, 1, log(forks))) 
 
-ggplot(stars_tbl, aes(x = forks, y = stargazers)) +
-  geom_point() +
-  scale_y_log10() +
-  scale_x_log10()
+
+  ggplot(scatter_data, aes(x = created, y = stargazers)) +
+  geom_point(aes(color = forks, size = forks), alpha = 0.9) +
+  geom_text_repel(data =  top_n(scatter_data, 5, stargazers), aes(label = name), box.padding = unit(0.5, "lines")) +
+  scale_color_nord(palette = "victory_bonds", discrete = FALSE, reverse = TRUE, name = "Forks")  +
+  scale_y_log10(breaks = c(1, 10, 100, 1000, 10000, 100000), labels = scales::comma, limits = c(1, 100000)) +
+  theme_jk() 
 
 ```
+
+
