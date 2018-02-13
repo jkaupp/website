@@ -1,0 +1,62 @@
+---
+title: Second star to the right and straight on 'til morning
+author: Jake Kaupp
+date: '2018-02-13'
+slug: second-star-to-the-right-and-straight-on-til-morning
+categories:
+  - community
+  - visualization
+  - R
+tags:
+  - R
+---
+
+> The strength of R doesn't lie in a single programming paradigm, it lies within the warm, welcoming and ecclectic community of useRs.
+
+Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  Yet, in my opinion one of the most valuable things Bob does is star an incredible amount of work on github.  I have found out about a lot of great work, software, talks and R packages from reviewing what he stars.
+
+Wait.  This actually needs a phrase .... "hrbrgazing"...... "hrbrstars"....."starbrgazing"!
+
+Bob Barker: Tell him what he's won Johnny.
+
+Johnny: "You've won the next topic for a blog post!"
+
+I wanted to draw a little more attenion to starbrgazing and just how much you can discover by using the more social aspect of github, following people, and a pile of IFTTT alerts.
+
+```{r setup}
+library(gh)
+library(tidyverse)
+library(lubridate)
+library(viridis)
+
+hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .limit = Inf) 
+
+stars_tbl <- tibble(name = map_chr(hrbr_stars, "name"),
+                    description = map_chr(hrbr_stars, "description", .null = NA),
+                    language = map_chr(hrbr_stars, "language", .null = NA),
+                    stargazers = map_int(hrbr_stars, "stargazers_count", .null = 0),
+                    forks = map_int(hrbr_stars, "forks_count", .null = 0),
+                    created = as_date(map_chr(hrbr_stars, "created_at")),
+                    size = map_int(hrbr_stars, "size", .null = 0),
+                    index = rev(seq_along(name)))
+```
+
+```{r scatter}
+
+ggplot(stars_tbl, aes(x = created, y = stargazers, color = ifelse(forks == 0, 1, log(forks)))) +
+  geom_point() +
+  scale_color_viridis() +
+  scale_y_log10()
+
+```
+
+```{r scatter}
+
+stars_tbk %>%
+
+ggplot(stars_tbl, aes(x = forks, y = stargazers)) +
+  geom_point() +
+  scale_y_log10() +
+  scale_x_log10()
+
+```
