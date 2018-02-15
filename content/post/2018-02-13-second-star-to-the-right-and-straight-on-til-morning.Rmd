@@ -42,7 +42,7 @@ library(showtext)
 library(emo)
 library(waffle)
 
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.showtext = TRUE, fig.width = 8, fig.height = 4)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.width = 8, fig.height = 4)
 
 font_add_google("Oswald", "Oswald")
 font_add_google("Scope One", "Scope One")
@@ -117,7 +117,7 @@ stars_tbl %>%
 
 Yeah, that's a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r waffle, fig.width = 10, fig.height = 5}
+```{r waffle, fig.width = 10, fig.height = 5, fig.showtext = TRUE}
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -181,7 +181,7 @@ ggiraph(ggobj = full_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip
 
 We can see that in the early days, there was a little activity and that was limited to starring very popular and impactful packages in the R ecosystem.  If you look at activity past 2014, you start to see more star activity in the smaller, perhaps lesser known projects.  This activity could also very well be due to the growing popularity of R and the flurry of development on github with all of the orgs and movements to support Open Science, Data literacy, data science, and coding in general.  Let's break this up a bit by some arbitrary binning of popularity by stars.
 
-```{r lvl_scatter}
+```{r lvl_scatter, fig.showtext = TRUE}
 
 pop_stars <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -226,7 +226,7 @@ ggiraph(ggobj = pop_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_
 
 That's a lot of Steves.  Like we said earlier, there is a (anecdotally) a lot more development happening on github around R, and hrbrmstr stars a *LOT* of those projects.  Zooming in....
 
-```{r low_scatter}
+```{r low_scatter, fig.showtext = TRUE}
 
 low_plot <- pop_stars %>% 
   filter(grepl("Steve", star_category)) %>% 
@@ -247,7 +247,7 @@ ggiraph(ggobj = low_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_
 
 Take a look at some of the gems in there, or at least take my word for it that they are gems.  You've got `egg` from @tpab (of `gridExtra` and the answer to every "How to I arrange ggplot2 objects together" question on Stack Overflow), `ggforce` from the Data Imaginist, Thomas Pederson, `snakecase`, `rtweet`, the fun `CastleofR`, `seleniumPipes`,  a pile of presentations and neat hobby and one-off projects from a variety of useRs.  I learned about a tonne of `ggplot` related packages from starbrgazing (including `ggiraph` which is used in the interactive plots).  In fact....
 
-```{r gg_scatter}
+```{r gg_scatter, fig.showtext = TRUE}
 
 gg_plot <- pop_stars %>% 
   filter(grepl("\\bgg", name) | grepl("\\bgg", description)) %>% 
@@ -265,4 +265,6 @@ ggiraph(ggobj = gg_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_c
   
 ```
 
-Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing.  The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, Stack Overflow all the slack things and follow along!
+Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing!  
+
+The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter on github.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, Stack Overflow all the slack things and follow along!
