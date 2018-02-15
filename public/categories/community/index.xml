@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Community on Jake Kaupp</title>
+    <link>/categories/community/</link>
+    <description>Recent content in Community on Jake Kaupp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/community/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Second star to the right and straight on &#39;til morning</title>
+      <link>/post/second-star-to-the-right-and-straight-on-til-morning/</link>
+      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/second-star-to-the-right-and-straight-on-til-morning/</guid>
+      <description>ç &amp;gt; The strength of R doesn’t lie in a single programming paradigm, it lies within the warm, welcoming and ecclectic community of useRs.
+Like anyone who gets introduced to R, you start to look on the web for other like minded people. Upon doing so, you find a vibrant community with very knowledgable and helpful people. Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.</description>
+    </item>
+    
+  </channel>
+</rss>

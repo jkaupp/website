@@ -10,10 +10,14 @@ categories:
 tags:
   - R
 ---
-
+ç
 > The strength of R doesn't lie in a single programming paradigm, it lies within the warm, welcoming and ecclectic community of useRs.
 
-Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  Yet, in my opinion one of the most valuable things Bob does is star an incredible amount of work on github.  I have found out about a lot of great work, software, talks and R packages from reviewing what he stars.
+Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  
+
+He inspired a lot of my more public forays into R with his short-lived 52Vis contest, and inspired me to start writing my first package after viewing his `hrbrmisc` package of personal functions.  Quick aside here: I think this is a good starting place for people to dip their toes into package writing.  Make a personal pacakge with your own custom themes, palettes, helper functions, etc.  It helps you with your own work and is a low-risk introduction to the world of packages.  It's how my first public package on CRAN came about, a natural extension of palettes I was using into the public domain.
+
+Yet, in my opinion one of the most valuable things Bob does is star an incredible amount of work on github.  I have found out about a lot of great work, software, talks and R packages from reviewing what he stars.
 
 Wait.  This actually needs a phrase .... "hrbrgazing"...... "hrbrstars"....."starbrgazing"!
 
@@ -21,9 +25,9 @@ Bob Barker: Tell him what he's won Johnny.
 
 Johnny: "You've won the next topic for a blog post!"
 
-I wanted to draw a little more attenion to starbrgazing and just how much you can discover by using the more social aspect of github, following people, and a pile of IFTTT alerts.
+I wanted to draw a little more attenion to starbrgazing and just how much you can discover by using the more social aspect of github, following people, a pile of IFTTT alerts and reviewing and testing out what they star. 
 
-```{r setup, echo = FALSE}
+```{r setup, echo = FALSE, include = FALSE}
 library(gh)
 library(tidyverse)
 library(lubridate)
@@ -33,25 +37,56 @@ library(nord)
 library(jkmisc)
 library(knitr)
 library(ggrepel)
+library(ggiraph)
+library(showtext)
+library(emo)
+library(waffle)
 
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.width = 10, fig.height = 5)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.showtext = TRUE, fig.width = 8, fig.height = 4)
 
+font_add_google("Oswald", "Oswald")
+font_add_google("Scope One", "Scope One")
 
-hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .limit = Inf) 
+if(!exists("hrbr_stars")) {
+  hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .limit = Inf) 
+  
+  stars_tbl <- tibble(name = map_chr(hrbr_stars, "name"),
+                      description = map_chr(hrbr_stars, "description", .null = NA),
+                      language = map_chr(hrbr_stars, "language", .null = NA),
+                      stargazers = map_int(hrbr_stars, "stargazers_count", .null = 0),
+                      forks = map_int(hrbr_stars, "forks_count", .null = 0),
+                      created = as_date(map_chr(hrbr_stars, "created_at")),
+                      size = map_int(hrbr_stars, "size", .null = 0),
+                      index = rev(seq_along(name))) 
+}
 
-stars_tbl <- tibble(name = map_chr(hrbr_stars, "name"),
-                    description = map_chr(hrbr_stars, "description", .null = NA),
-                    language = map_chr(hrbr_stars, "language", .null = NA),
-                    stargazers = map_int(hrbr_stars, "stargazers_count", .null = 0),
-                    forks = map_int(hrbr_stars, "forks_count", .null = 0),
-                    created = as_date(map_chr(hrbr_stars, "created_at")),
-                    size = map_int(hrbr_stars, "size", .null = 0),
-                    index = rev(seq_along(name)))
+tooltip_css <- "background-color:white;padding:10px;border-radius:20px 20px 20px 20px;border-color:black;border-style:solid;border-width:1px;
+.tiprow { vertical-align:middle;}
+
+.tooltip { text-align:left; }
+
+.tipheader {
+  font-family: 'Oswald';
+  font:12px;
+  text-align: left;
+  padding: 3px;
+  margin: 1px;
+}
+
+.tiptext {
+  font-family: 'Scope One';
+  font: 9px;
+  text-align: right;
+  padding-right: 3px;
+}"
+
+showtext_auto()
+
 ```
 
+First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturall, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
 
-
-```{r languages}
+```{r languages, fig.showtext= TRUE}
 
 top_languages <- stars_tbl %>% 
   filter(!is.na(language)) %>% 
@@ -71,27 +106,165 @@ stars_tbl %>%
   ggplot(., aes(x = year, y = n)) +
   geom_area(aes(fill = fill), color = "grey20", size = 0.1, show.legend = FALSE) +
   scale_y_continuous(limits = c(0, 20)) +
+  labs(title = "Which Language Projects does Hrbrmstr Star the Most, and is there a trend?",
+       subtitle = "Number of starred projects over time of the top 5 languages", x = NULL, y = NULL) +
   scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
   facet_wrap(~language, nrow = 1) +
   theme_jk()
 
 ```
 
+Yeah, thats a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r scatter}
+```{r waffle}
 
-scatter_data <- stars_tbl %>% 
+cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
-  mutate(log_size = ifelse(forks == 0, 1, log(forks))) 
+  mutate(category = case_when(grepl("package", description, ignore.case = TRUE) ~ "Packages",
+                              grepl("shiny|application|plumber", description, ignore.case = TRUE) ~ "Shiny",
+                              grepl("book|paper", description, ignore.case = TRUE) ~ "Publications",
+                              grepl("lecture|module|proposal", description, ignore.case = TRUE) ~ "Education",
+                              grepl("tweets|geolocating|fortune|exposure|cdc|tour|Mar-a-lago|remaking|published|election", description, ignore.case = TRUE) ~ "Projects",
+                              TRUE ~ "Packages")) %>% 
+  count(category) %>% 
+  arrange(desc(n))
 
+x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 16, legend_pos = "right", flip = TRUE, equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
 
-  ggplot(scatter_data, aes(x = created, y = stargazers)) +
-  geom_point(aes(color = forks, size = forks), alpha = 0.9) +
-  geom_text_repel(data =  top_n(scatter_data, 5, stargazers), aes(label = name), box.padding = unit(0.5, "lines")) +
-  scale_color_nord(palette = "victory_bonds", discrete = FALSE, reverse = TRUE, name = "Forks")  +
-  scale_y_log10(breaks = c(1, 10, 100, 1000, 10000, 100000), labels = scales::comma, limits = c(1, 100000)) +
-  theme_jk() 
+x + theme(plot.title = element_text(family = "Oswald"),
+          legend.text = element_text(family = "Scope One"))
 
 ```
 
+No surprise that the bulk of R projects are pacakges, with a smattering of educational stuff, shiny applications and analysis driven projects.  
 
+```{r popular_scatter, fig.showtext = TRUE}
+
+scatter_data <- stars_tbl %>% 
+  filter(language == "R") %>% 
+  mutate(description = gsub("\\'", "", description)) %>% 
+  mutate(tooltip = glue('<div class="tooltip">
+      <h3>{name}</h3>
+      <table>
+      <tr class="tiprow">
+      <td class="tiptext">Description</td>
+      <td class="tiptext">{description}</td>
+      </tr>
+      <tr class="tiprow">
+      <td class="tiptext">Stars:</td>
+      <td class="tiptext">{stargazers}</td>
+      </tr>
+      <tr class="tiprow">
+      <td class="tiptext">Forks:</td>
+      <td class="tiptext">{forks}</td>
+      </tr>
+      </table>
+      </div>')) %>% 
+mutate(tooltip = gsub("\\\n", "", tooltip))
+
+full_plot <- ggplot(scatter_data, aes(x = created, y = stargazers)) +
+  geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
+  scale_y_log10(breaks= c(1, 10, 100, 1000, 10000, 100000), labels = scales::comma, limits = c(1, 100000)) +
+  labs(title = "R Projects starred by hrbrmstr",
+       subtitle = str_wrap("Illustrating the number of projects (log-scale of stargazers) starred over time.", 100),
+       y = NULL,
+       x = NULL) +
+  theme_jk(grid = "XY") +
+  theme(legend.position = "bottom",
+        legend.direction = "horizontal")
+
+ggiraph(ggobj = full_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
+  
+
+```
+
+We can see that in the early days, there was a little activity and that was limited to starring very popular and impactful packages in the R ecosystem.  If you look at activity past 2014, you start to see more star activity in the smaller, perhaps lesser known projects.  This activity could also very well be due to the growing popularity of R and the flurry of development on github with all of the orgs and movements to support Open Science, Data literacy, data science, and coding in general.  Let's break this up a bit by some arbitrary binning of popularity by stars.
+
+```{r lvl_scatter}
+
+pop_stars <- stars_tbl %>% 
+  filter(language == "R") %>% 
+  mutate(star_category = cut(stargazers, c(0, 50, 100, 500, Inf), c("Steve from Canada", "Hometown Hero", "Known to Authorities","Most Wanted"), include.lowest = TRUE)) %>% 
+
+  mutate(description = gsub("\\'", "", description)) %>% 
+  mutate(tooltip = glue('<div class="tooltip">
+      <h3>{name}</h3>
+      <table>
+      <tr class="tiprow">
+      <td class="tiptext">Description</td>
+      <td class="tiptext">{description}</td>
+      </tr>
+      <tr class="tiprow">
+      <td class="tiptext">Stars:</td>
+      <td class="tiptext">{stargazers}</td>
+      </tr>
+      <tr class="tiprow">
+      <td class="tiptext">Forks:</td>
+      <td class="tiptext">{forks}</td>
+      </tr>
+      </table>
+      </div>')) %>% 
+mutate(tooltip = gsub("\\\n", "", tooltip))
+
+pop_plot <- ggplot(pop_stars, aes(x = created, y = stargazers)) +
+  geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
+  labs(title = "Hrbrstarred R Projects According to Arbitary Popularity",
+       subtitle = str_wrap("Illustrating the differences in relative popularity (abritrary noteriety scale) of starred projects over time", 100),
+       y = NULL,
+       x = NULL) +
+  theme_jk(grid = "XY") +
+  facet_wrap(~star_category, scales = "free_y", as.table = FALSE, nrow = 1) +
+  theme(legend.position = "bottom",
+        legend.direction = "horizontal")
+
+
+ggiraph(ggobj = pop_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
+  
+
+```
+
+That's a lot of Steves.  Like we said earlier, there is a (anecdotally) a lot more development happening on github around R, and hrbrmstr stars a *LOT* of those projects.  Zooming in....
+
+```{r low_scatter}
+
+low_plot <- pop_stars %>% 
+  filter(grepl("Greg", star_category)) %>% 
+  ggplot(., aes(x = created, y = stargazers)) +
+  geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
+  labs(title = "The Lesser Known Hrbrstarred R Projects",
+       subtitle = str_wrap("Illustrating the lesser known R projects starred over time", 100),
+       y = NULL,
+       x = NULL) +
+  theme_jk(grid = "XY") +
+  theme(legend.position = "bottom",
+        legend.direction = "horizontal")
+
+
+ggiraph(ggobj = low_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
+  
+
+```
+
+Take a look at some of the gems in there, or at least take my word for it that they are gems.  You've got `egg` from @tpab (of `gridExtra` and the answer to every "How to I arrange ggplot2 objects together" question on StackOverflow), `ggforce` from the Data Imaginist, Thomas Pederson, `snakecase`, `rtweet`, the fun `CastleofR`, `seleniumPipes`,  a pile of presentations and neat hobby and one-off projects from a variety of useRs.  I learned about a tonne of `ggplot` related packages from starbrgazing (including `ggiraph` which is used in the interactive plots).  In fact....
+
+```{r gg_scatter}
+
+gg_plot <- pop_stars %>% 
+  filter(grepl("\\bgg", name) | grepl("\\bgg", description)) %>% 
+  ggplot(., aes(x = created, y = stargazers)) +
+  geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
+  labs(title = "The ggplot Related Hrbrstarred R Projects",
+       subtitle = str_wrap("Illustrating the gg-projects starred over time", 100),
+       y = NULL,
+       x = NULL) +
+  theme_jk(grid = "XY") +
+  theme(legend.position = "bottom",
+        legend.direction = "horizontal")
+
+
+ggiraph(ggobj = gg_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
+  
+
+```
+
+Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing.  The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, stackoverflow all the slack things and follow along!
