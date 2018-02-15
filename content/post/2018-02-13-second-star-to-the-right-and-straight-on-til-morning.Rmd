@@ -86,7 +86,7 @@ showtext_auto()
 
 First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturall, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
 
-```{r languages, fig.showtext = TRUE, fig.width = 10, height = 8}
+```{r languages, fig.showtext = TRUE, fig.width = 8, height = 8, out.width = "100%"}
 
 top_languages <- stars_tbl %>% 
   filter(!is.na(language)) %>% 
