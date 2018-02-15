@@ -130,7 +130,7 @@ cat_data <- stars_tbl %>%
   count(category) %>% 
   arrange(desc(n))
 
-x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 16, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
+x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 10, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects", pad = 2) 
 
 x + theme(plot.title = element_text(family = "Oswald", size = 28),
           legend.text = element_text(family = "Scope One", size = 20))
