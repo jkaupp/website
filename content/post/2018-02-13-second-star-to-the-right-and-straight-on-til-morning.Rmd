@@ -110,7 +110,7 @@ stars_tbl %>%
        subtitle = "Number of starred projects over time of the top 5 languages", x = NULL, y = NULL) +
   scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
   facet_wrap(~language, nrow = 1) +
-  theme_jk(base_size = 24)
+  theme_jk(base_size = 20, plot_title_size = 28, subtitle_size = 24)
 
 ```
 
@@ -131,8 +131,8 @@ cat_data <- stars_tbl %>%
 
 x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 16, legend_pos = "right", flip = TRUE, equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
 
-x + theme(plot.title = element_text(family = "Oswald", size = 24),
-          legend.text = element_text(family = "Scope One", size = 18))
+x + theme(plot.title = element_text(family = "Oswald", size = 28),
+          legend.text = element_text(family = "Scope One", size = 20))
 
 ```
 
