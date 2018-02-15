@@ -13,9 +13,9 @@ tags:
 
 > The strength of R doesn't lie in a single programming paradigm, it lies within the warm, welcoming and ecclectic community of useRs.
 
-Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  
+Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgeable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  
 
-He inspired a lot of my more public forays into R with his short-lived 52Vis contest, and inspired me to start writing my first package after viewing his `hrbrmisc` package of personal functions.  Quick aside here: I think this is a good starting place for people to dip their toes into package writing.  Make a personal pacakge with your own custom themes, palettes, helper functions, etc.  It helps you with your own work and is a low-risk introduction to the world of packages.  It's how my first public package on CRAN came about, a natural extension of palettes I was using into the public domain.
+He inspired a lot of my more public forays into R with his short-lived 52Vis contest, and inspired me to start writing my first package after viewing his `hrbrmisc` package of personal functions.  Quick aside here: I think this is a good starting place for people to dip their toes into package writing.  Make a personal package with your own custom themes, palettes, helper functions, etc.  It helps you with your own work and is a low-risk introduction to the world of packages.  It's how my first public package on CRAN came about, a natural extension of palettes I was using into the public domain.
 
 Yet, in my opinion one of the most valuable things Bob does is star an incredible amount of work on github.  I have found out about a lot of great work, software, talks and R packages from reviewing what he stars.
 
@@ -25,7 +25,7 @@ Bob Barker: Tell him what he's won Johnny.
 
 Johnny: "You've won the next topic for a blog post!"
 
-I wanted to draw a little more attenion to starbrgazing and just how much you can discover by using the more social aspect of github, following people, a pile of IFTTT alerts and reviewing and testing out what they star. 
+I wanted to draw a little more attention to starbrgazing and just how much you can discover by using the more social aspect of github, following people, a pile of IFTTT alerts and reviewing and testing out what they star. 
 
 ```{r setup, echo = FALSE, include = FALSE}
 library(gh)
@@ -85,7 +85,7 @@ showtext_auto()
 
 ```
 
-First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturall, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
+First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturally, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
 
 ```{r languages, fig.showtext = TRUE, fig.width = 10, height = 5}
 
@@ -115,9 +115,9 @@ stars_tbl %>%
 
 ```
 
-Yeah, thats a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
+Yeah, that's a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r waffle, fig.width = 10, fig.height = 8}
+```{r waffle, fig.width = 10, fig.height = 5}
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -130,14 +130,14 @@ cat_data <- stars_tbl %>%
   count(category) %>% 
   arrange(desc(n))
 
-x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 16, legend_pos = "right", flip = TRUE, equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
+x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 16, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
 
 x + theme(plot.title = element_text(family = "Oswald", size = 28),
           legend.text = element_text(family = "Scope One", size = 20))
 
 ```
 
-No surprise that the bulk of R projects are pacakges, with a smattering of educational stuff, shiny applications and analysis driven projects.  
+No surprise that the bulk of R projects are packages, with a smattering of educational stuff, shiny applications and analysis driven projects.  
 
 ```{r popular_scatter, fig.showtext = TRUE}
 
@@ -245,7 +245,7 @@ ggiraph(ggobj = low_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_
 
 ```
 
-Take a look at some of the gems in there, or at least take my word for it that they are gems.  You've got `egg` from @tpab (of `gridExtra` and the answer to every "How to I arrange ggplot2 objects together" question on StackOverflow), `ggforce` from the Data Imaginist, Thomas Pederson, `snakecase`, `rtweet`, the fun `CastleofR`, `seleniumPipes`,  a pile of presentations and neat hobby and one-off projects from a variety of useRs.  I learned about a tonne of `ggplot` related packages from starbrgazing (including `ggiraph` which is used in the interactive plots).  In fact....
+Take a look at some of the gems in there, or at least take my word for it that they are gems.  You've got `egg` from @tpab (of `gridExtra` and the answer to every "How to I arrange ggplot2 objects together" question on Stack Overflow), `ggforce` from the Data Imaginist, Thomas Pederson, `snakecase`, `rtweet`, the fun `CastleofR`, `seleniumPipes`,  a pile of presentations and neat hobby and one-off projects from a variety of useRs.  I learned about a tonne of `ggplot` related packages from starbrgazing (including `ggiraph` which is used in the interactive plots).  In fact....
 
 ```{r gg_scatter}
 
@@ -265,4 +265,4 @@ ggiraph(ggobj = gg_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_c
   
 ```
 
-Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing.  The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, stackoverflow all the slack things and follow along!
+Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing.  The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, Stack Overflow all the slack things and follow along!
