@@ -86,7 +86,7 @@ showtext_auto()
 
 First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturall, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
 
-```{r languages, fig.showtext = TRUE, fig.width = 8, height = 8, out.width = "100%"}
+```{r languages, fig.showtext = TRUE, fig.width = 8, height = 5}
 
 top_languages <- stars_tbl %>% 
   filter(!is.na(language)) %>% 
@@ -110,7 +110,7 @@ stars_tbl %>%
        subtitle = "Number of starred projects over time of the top 5 languages", x = NULL, y = NULL) +
   scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
   facet_wrap(~language, nrow = 1) +
-  theme_jk(base_size = 20, plot_title_size = 28, subtitle_size = 24)
+  theme_jk(base_size = 24, plot_title_size = 28, subtitle_size = 24, strip_text_size = 24)
 
 ```
 
