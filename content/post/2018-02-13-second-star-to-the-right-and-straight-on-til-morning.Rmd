@@ -19,13 +19,13 @@ He inspired a lot of my more public forays into R with his short-lived 52Vis con
 
 Yet, in my opinion one of the most valuable things Bob does is star an incredible amount of work on github.  I have found out about a lot of great work, software, talks and R packages from reviewing what he stars.
 
-Wait.  This actually needs a phrase .... "hrbrgazing"...... "hrbrstars"....."starbrgazing"!
+Wait.  This actually needs a phrase .... "hrbrgazing"...... "hrbrstars"....."starbrgazing"....too many vowels... "strbrgzng"?
 
 Bob Barker: Tell him what he's won Johnny.
 
 Johnny: "You've won the next topic for a blog post!"
 
-I wanted to draw a little more attention to starbrgazing and just how much you can discover by using the more social aspect of github, following people, a pile of IFTTT alerts and reviewing and testing out what they star. 
+Apologies to @hrbrmstr but I'm going to use some vowels and stick with "starbrgazing".  I wanted to draw a little more attention to starbrgazing and just how much you can discover by using the more social aspect of github, following people, a pile of IFTTT alerts and reviewing and testing out what they star. 
 
 ```{r setup, echo = FALSE, include = FALSE}
 library(gh)
@@ -107,7 +107,7 @@ stars_tbl %>%
   ggplot(., aes(x = year, y = n)) +
   geom_area(aes(fill = fill), color = "grey20", size = 0.1, show.legend = FALSE) +
   scale_y_continuous(limits = c(0, 20)) +
-  labs(title = "Which Language Projects does Hrbrmstr Star the Most, and is there a trend?",
+  labs(title = "Which Language Projects does @hrbrmstr Star the Most, and is there a trend?",
        subtitle = "Number of starred projects over time of the top 5 languages", x = NULL, y = NULL) +
   scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
   facet_wrap(~language, nrow = 1) +
@@ -115,9 +115,11 @@ stars_tbl %>%
 
 ```
 
-Yeah, that's a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
+Yeah, that's a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time ?
 
 ```{r waffle, fig.showtext = TRUE}
+
+showtext_auto()
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -130,14 +132,14 @@ cat_data <- stars_tbl %>%
   count(category) %>% 
   arrange(desc(n))
 
-x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 10, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
+x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 10, legend_pos = "right", title = "Where'd you go?") 
 
-x + theme(plot.title = element_text(family = "Oswald", size = 28),
+x + theme(plot.title = element_text(family = "Oswald", size = 24),
           legend.text = element_text(family = "Scope One", size = 20))
 
 ```
 
-No surprise that the bulk of R projects are packages, with a smattering of educational stuff, shiny applications and analysis driven projects.  
+No surprise that the bulk of R projects are packages, with a smattering of educational stuff, shiny applications and analysis driven projects.  Now, how popular are the projects that he's starring?  
 
 ```{r popular_scatter, fig.showtext = TRUE}
 
@@ -166,8 +168,8 @@ mutate(tooltip = gsub("\\\n", "", tooltip))
 full_plot <- ggplot(scatter_data, aes(x = created, y = stargazers)) +
   geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
   scale_y_log10(breaks= c(1, 10, 100, 1000, 10000, 100000), labels = scales::comma, limits = c(1, 100000)) +
-  labs(title = "R Projects starred by hrbrmstr",
-       subtitle = str_wrap("Illustrating the number of projects (log-scale of stargazers) starred over time.", 100),
+  labs(title = "R Projects starred by @hrbrmstr",
+       subtitle = str_wrap("Illustrating the number of projects (log-scale of stargazers) starred over time. Hover over points for details", 100),
        y = NULL,
        x = NULL) +
   theme_jk(grid = "XY") +
@@ -210,7 +212,7 @@ mutate(tooltip = gsub("\\\n", "", tooltip))
 pop_plot <- ggplot(pop_stars, aes(x = created, y = stargazers)) +
   geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
   labs(title = "Hrbrstarred R Projects According to Arbitary Popularity",
-       subtitle = str_wrap("Illustrating the differences in relative popularity (abritrary noteriety scale) of starred projects over time", 100),
+       subtitle = str_wrap("Illustrating the differences in relative popularity (abritrary noteriety scale) of starred projects over time. Hover over points for details", 100),
        y = NULL,
        x = NULL) +
   theme_jk(grid = "XY") +
@@ -233,7 +235,7 @@ low_plot <- pop_stars %>%
   ggplot(., aes(x = created, y = stargazers)) +
   geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
   labs(title = "The Lesser Known Hrbrstarred R Projects",
-       subtitle = str_wrap("Illustrating the lesser known R projects starred over time", 100),
+       subtitle = str_wrap("Illustrating the lesser known R projects starred over time. Hover over points for details", 100),
        y = NULL,
        x = NULL) +
   theme_jk(grid = "XY") +
@@ -254,7 +256,7 @@ gg_plot <- pop_stars %>%
   ggplot(., aes(x = created, y = stargazers)) +
   geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
   labs(title = "The ggplot Related Hrbrstarred R Projects",
-       subtitle = str_wrap("Illustrating the gg-projects starred over time", 100),
+       subtitle = str_wrap("Illustrating the gg-projects starred over time. Hover over points for details", 100),
        y = NULL,
        x = NULL) +
   theme_jk(grid = "XY") +
