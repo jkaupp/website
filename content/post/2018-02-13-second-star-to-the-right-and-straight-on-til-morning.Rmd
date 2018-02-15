@@ -228,7 +228,7 @@ That's a lot of Steves.  Like we said earlier, there is a (anecdotally) a lot mo
 ```{r low_scatter}
 
 low_plot <- pop_stars %>% 
-  filter(grepl("Greg", star_category)) %>% 
+  filter(grepl("Steve", star_category)) %>% 
   ggplot(., aes(x = created, y = stargazers)) +
   geom_point_interactive(aes(data_id = index, tooltip = tooltip), alpha = 0.5, size = 3, color = tol1qualitative) +
   labs(title = "The Lesser Known Hrbrstarred R Projects",
@@ -260,10 +260,8 @@ gg_plot <- pop_stars %>%
   theme(legend.position = "bottom",
         legend.direction = "horizontal")
 
-
 ggiraph(ggobj = gg_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
   
-
 ```
 
 Following hrbrmstr on github and twitter was getting a `ggplot2` extensions website before it was a thing.  The moral of this story?  Follow hrbrmstr on github.  Follow every developer you see on twitter.  Star their packages, use them if you can.  Look at how they structure things, the patterns they use.  Read the issues, read the wiki and if you see an area you think you can contribute, plan on doing so (follow @ma_salmon on twitter and ropenscilabs on github for good advice). I guess what I'm trying to say is that if you feel that this is the community for you, interact!  Use twitter, github, community.rstudio, stackoverflow all the slack things and follow along!
