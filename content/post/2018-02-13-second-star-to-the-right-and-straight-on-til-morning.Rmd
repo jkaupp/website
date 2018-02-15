@@ -57,7 +57,8 @@ if(!exists("hrbr_stars")) {
                       forks = map_int(hrbr_stars, "forks_count", .null = 0),
                       created = as_date(map_chr(hrbr_stars, "created_at")),
                       size = map_int(hrbr_stars, "size", .null = 0),
-                      index = rev(seq_along(name))) 
+                      index = rev(seq_along(name))) %>% 
+    filter(!is.na(name), name != "R")
 }
 
 tooltip_css <- "background-color:white;padding:10px;border-radius:20px 20px 20px 20px;border-color:black;border-style:solid;border-width:1px;
@@ -116,7 +117,7 @@ stars_tbl %>%
 
 Yeah, thats a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r waffle, fig.width = 4, fig.height = 6}
+```{r waffle, fig.width = 10, fig.height = 5}
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
