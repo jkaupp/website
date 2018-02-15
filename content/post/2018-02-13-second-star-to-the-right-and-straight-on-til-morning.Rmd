@@ -117,7 +117,7 @@ stars_tbl %>%
 
 Yeah, that's a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r waffle, fig.width = 10, fig.height = 5, fig.showtext = TRUE}
+```{r waffle, fig.width = 10, fig.height = 10, fig.showtext = TRUE}
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -130,7 +130,7 @@ cat_data <- stars_tbl %>%
   count(category) %>% 
   arrange(desc(n))
 
-x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 10, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects", pad = 2) 
+x <- waffle(set_names(cat_data$n, cat_data$category), colors = nord(palette = "lumina", 5), size = 0.4, rows = 10, legend_pos = "right", equal = TRUE, title = "Delicious Category Waffle of Hrbrstarred R Projects") 
 
 x + theme(plot.title = element_text(family = "Oswald", size = 28),
           legend.text = element_text(family = "Scope One", size = 20))
