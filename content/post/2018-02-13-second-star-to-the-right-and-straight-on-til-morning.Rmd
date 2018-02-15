@@ -10,7 +10,7 @@ categories:
 tags:
   - R
 ---
-ç
+
 > The strength of R doesn't lie in a single programming paradigm, it lies within the warm, welcoming and ecclectic community of useRs.
 
 Like anyone who gets introduced to R, you start to look on the web for other like minded people.  Upon doing so, you find a vibrant community with very knowledgable and helpful people.  Bob Rudis (@hrbrmstr) is one of those people, doling out R wisdom, visualization, typography, culinary and infosec goodness on the regular.  
@@ -86,7 +86,7 @@ showtext_auto()
 
 First, a little look regarding hrbrmstr's starring activity, and which sort of projects in specific languages catch his eye.  Naturall, R is of prominent focus, but there is also significant activity in other languages that compliment R, such as C++, JS and html. 
 
-```{r languages, fig.showtext= TRUE}
+```{r languages, fig.showtext = TRUE}
 
 top_languages <- stars_tbl %>% 
   filter(!is.na(language)) %>% 
@@ -110,13 +110,13 @@ stars_tbl %>%
        subtitle = "Number of starred projects over time of the top 5 languages", x = NULL, y = NULL) +
   scale_fill_manual(values = set_names(tol2qualitative,c("notR","R"))) +
   facet_wrap(~language, nrow = 1) +
-  theme_jk()
+  theme_jk(base_size = 20)
 
 ```
 
 Yeah, thats a pretty heavy amount of R, with an increasing trend in recent years. Lets just look at the R projects for now.  What sort of R projects has he starred over time, and how popular are those projects?
 
-```{r waffle}
+```{r waffle, fig.width = 4, fig.height = 6}
 
 cat_data <- stars_tbl %>% 
   filter(language == "R") %>% 
@@ -238,7 +238,6 @@ low_plot <- pop_stars %>%
   theme_jk(grid = "XY") +
   theme(legend.position = "bottom",
         legend.direction = "horizontal")
-
 
 ggiraph(ggobj = low_plot, width_svg = 8, width = 1, tooltip_extra_css = tooltip_css)
   
