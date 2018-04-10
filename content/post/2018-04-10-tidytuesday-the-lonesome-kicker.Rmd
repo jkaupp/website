@@ -75,7 +75,7 @@ labels_538 <- function(labels) {
 }
 ```
 
-![tidytuesday2](https://cdn.rawgit.com/jkaupp/tidytuesdays/212d7030/week2/tw2_heatmap.png)
+![](https://cdn.rawgit.com/jkaupp/tidytuesdays/212d7030/week2/tw2_heatmap.png)
 
 
 
