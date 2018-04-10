@@ -6,10 +6,21 @@
     <description>Recent content in Post on Jake Kaupp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tidytuesday:The lonesome kicker</title>
+      <link>/post/tidytuesday-the-lonesome-kicker/</link>
+      <pubDate>Tue, 10 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tidytuesday-the-lonesome-kicker/</guid>
+      <description>I do not update this site as much as I would like. Interacting through twitter and the #R4DS slack channel has been my main contributions as of late to being more active in the #rstats community. I make plans to get to things like posting, then end up with other work, a neat idea, or just decide spend time with my family.
+Worthy endeavors all of them.
+Anyways, Thomas Mock (@thomasmock), has started up #tidytuesday out of the mentorship pilot program in #R4DS.</description>
+    </item>
     
     <item>
       <title>Second star to the right and straight on &#39;til morning</title>

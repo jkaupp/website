@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.36" />
+        <meta name="generator" content="Hugo 0.38.2" />
         
   
     
@@ -265,6 +265,18 @@ ga('send', 'pageview');
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/post/tidytuesday-the-lonesome-kicker/">tidytuesday:The lonesome kicker</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-04-10'>
+                                    April 10, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/post/second-star-to-the-right-and-straight-on-til-morning/">Second star to the right and straight on &#39;til morning</a></h3>
                                 
                                 <time class="published" datetime=
@@ -282,18 +294,6 @@ ga('send', 'pageview');
                                 <time class="published" datetime=
                                     '2017-06-12'>
                                     June 12, 2017</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/content/post/2016-04-12-52vis-homeless/">52Vis - Homeless</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2016-04-12'>
-                                    April 12, 2016</time>
                             </header>
                             
 
@@ -429,19 +429,19 @@ I did learn some new things, new tricks and new tools from the lectures and I&rs
 <p>After realizing that it was using python, that made things a lot easier and just whipped up a quick script to do what I wanted it to do.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resizeLinear(wealth,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">20</span>)
-colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;198,219,239&#34;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;8,69,148&#34;</span>;)
+colorize(priorates,<span style="color:#e6db74">&#34;198,219,239&#34;</span>,<span style="color:#e6db74">&#34;8,69,148&#34;</span>;)
 <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>nodes:
     n<span style="color:#f92672">.</span>labelvisible <span style="color:#f92672">=</span> true
     n<span style="color:#f92672">.</span>strokecolor <span style="color:#f92672">=</span> n<span style="color:#f92672">.</span>color
 <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>edges:
     e<span style="color:#f92672">.</span>labelvisible <span style="color:#f92672">=</span> false
     e<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>;):
-        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;102,194,165&#34;</span>;
-    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;F&#34;</span>;):
-        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;252,141,98&#34;</span>;
-    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;F&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;T&#34;</span>;):
-        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;;141,160,203&#34;</span>;</code></pre></div>
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;T&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;;102,194,165&#34;</span>;
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;T&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;F&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;;252,141,98&#34;</span>;
+    <span style="color:#66d9ef">if</span> (e<span style="color:#f92672">.</span>business<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;F&#34;</span>; <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marriage<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;;T&#34;</span>;):
+        e<span style="color:#f92672">.</span>color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;;141,160,203&#34;</span>;</code></pre></div>
 
 <p>That lead me to the basic visualization, that I quickly pulled into <a href="http://affinity.serif.com/en-gb/">Affinity Designer</a>, my vector art and design instrument of choice, and made this:</p>
 
@@ -640,6 +640,20 @@ colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/post/tidytuesday-the-lonesome-kicker/">tidytuesday:The lonesome kicker</a>
+              </h3>
+              
+              <time class="published" datetime='2018-04-10'>
+                April 10, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/post/second-star-to-the-right-and-straight-on-til-morning/">Second star to the right and straight on &#39;til morning</a>
               </h3>
               
@@ -659,20 +673,6 @@ colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74
               
               <time class="published" datetime='2017-06-12'>
                 June 12, 2017
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/content/post/2016-04-12-52vis-homeless/">52Vis - Homeless</a>
-              </h3>
-              
-              <time class="published" datetime='2016-04-12'>
-                April 12, 2016
               </time>
             </header>
             
@@ -711,18 +711,7 @@ colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74
             <header>
               
                 <a href="/categories/r/">R</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/community/">community</a>
-                <span style="float:right;">1</span>
+                <span style="float:right;">2</span>
               
             </header>
           </article>
@@ -733,6 +722,17 @@ colorize(priorates,<span style="color:#e6db74"></span><span style="color:#e6db74
             <header>
               
                 <a href="/categories/visualization/">visualization</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/community/">community</a>
                 <span style="float:right;">1</span>
               
             </header>
