@@ -50,7 +50,7 @@ problem_countries <- suicide_data %>%
   pull(country)
 ```
 
-After that, I chose to present the differences between the individual countries and the global suicide rates using small multiples of a n area chart that overlays the global average on each country. 
+After that, I chose to present the differences between the individual countries and the global suicide rates using small multiples of an area chart that overlays the global average on each country. 
 
 ![sad plot](https://cdn.rawgit.com/jkaupp/tidytuesdays/1ca34a402151ce13893dbf20747df6c3ca5070cd/week3/tw3_sad_plot.png)
 
