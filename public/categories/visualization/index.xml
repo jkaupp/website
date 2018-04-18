@@ -6,10 +6,21 @@
     <description>Recent content in Visualization on Jake Kaupp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>#TidyTuesday: The Sad Story</title>
+      <link>/post/tidytuesday-the-sad-story/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tidytuesday-the-sad-story/</guid>
+      <description>This weeks #TidyTuesday is all about global mortality rates. I’ve looked at datasets like this before, and while they are a great way to see interesting trends and practise some visualization skills, I think there is another lesson to be learned. The human element of data.
+These data were people.
+They meant something to someone. They were here, now they are not. I think its important to think about the context of the data in that aspect, and realize that any analysis conducted should be done with that firmly in mind.</description>
+    </item>
     
     <item>
       <title>#TidyTuesday:The lonesome kicker</title>

@@ -1,0 +1,61 @@
+---
+title: '#TidyTuesday: The Sad Story'
+author: ~
+date: '2018-04-17'
+slug: tidytuesday-the-sad-story
+categories: 
+  - visualization
+  - R
+tags: 
+  - tidytuesday
+---
+
+This weeks #TidyTuesday is all about global mortality rates. I've looked at datasets like this before, and while they are a great way to see interesting trends and practise some visualization skills, I think there is another lesson to be learned.  The human element of data. 
+
+**These data were people.**  
+
+They meant something to someone.  They were _here_, now they are _not_.  I think its important to think about the context of the data in that aspect, and realize that any analysis conducted should be done with that firmly in mind.  Perhaps its my training as an engineer showing, that any problem I set out to solve has a personal and societal element and it is important to understand the complexities from multiple points of view.  In this I bear a burden to society, to do my utmost to keep the public safe and not to produce flawed designs to endanger anyone.
+
+IMO it is a topic best summed up by two quotes. First, from my third year Engineering Ethics professor:
+
+> Just because you're an engineer doesn't mean you can drive the train.
+
+Second, Uncle Ben:
+
+> With great power, comes great responsibility
+
+Plainly put: Just because you can doesn't mean you should, and just because you have the capability and knowledge it doesn't divest you of your responsibility. With all of the recent trends in data and the use of data lately, I think this is a timely lesson that all Data Scientists and Asipring Data Scientists should keep in mind. 
+
+There are a lot of stories to tell in this dataset.  I'm choosing one of the sadder ones.  Suicide.  It is a tradgedy that has touched countless people, families, communities and countries. It affects all, blind to status, blind to wealth, blind to language. From Our World In Data:
+
+>Every suicide is a tragedy. According to estimates from the World Health Organisation (WHO), over 800,000 people die due to suicide every year. This corresponds to an age-standardized suicide rate of around 11.5 per 100,000 people – a figure equivalent to someone dying of suicide every 40 seconds. Yet suicides are preventable with timely, evidence-based interventions.
+
+Here in Canada, it is a critical issue in [First Nations communities](https://www.theguardian.com/inequality/2017/aug/30/our-society-is-broken-what-can-stop-canadas-first-nations-suicide-epidemic) that highlights the dangers of inequality on so many levels, and puts considerable empahsis on the importance of [Reconciliation](http://reconciliationcanada.ca/).  It is always in the public eye, and recently so at the [MTV Video Music Awards](https://pitchfork.com/news/mtv-vma-2017-watch-logics-moving-1-800-273-8255-performance/).  
+
+It has affected my family.  
+
+So, if you or anyone you know needs help, [please speak up and seek help](http://www.suicide.org/international-suicide-hotlines.html).  You are not alone.
+
+This was a straightforward dataset to clean and create.  Just some small regexes to clean the names.  There was a small `dplyr` trick used to get the countries that were consistently above the global suicide rate for all years.
+
+```{r, eval = FALSE}
+problem_countries <- suicide_data %>% 
+  filter(country != "World") %>% 
+  left_join(global_rate, by = "year") %>% 
+  group_by(country) %>% 
+  filter(all(percentage.x > percentage.y)) %>% 
+  summarize(percentage = mean(percentage.x, na.rm = TRUE)) %>% 
+  top_n(40, percentage) %>% 
+  arrange(desc(percentage)) %>% 
+  pull(country)
+```
+
+After that, I chose to present the differences between the individual countries and the global suicide rates using small multiples of a n area chart that overlays the global average on each country. 
+
+![sad plot](https://cdn.rawgit.com/jkaupp/tidytuesdays/1ca34a402151ce13893dbf20747df6c3ca5070cd/week3/tw3_sad_plot.png)
+
+There are startling truths there.  Greenland.  South Korea. France.  There is a lot to look at, a lot to think about and so many factors to consider.  Difficult to see where to start.  A person, far wiser than myself told me once..
+
+> It all begins, with a conversation.
+
+So let's talk.

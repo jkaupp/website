@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.38.2" />
+        <meta name="generator" content="Hugo 0.39" />
         
   
     
@@ -48,7 +48,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-04-10T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-04-17T00:00:00&#43;00:00"/>
 
 
 
@@ -254,6 +254,18 @@ ga('send', 'pageview');
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/post/tidytuesday-the-sad-story/">#TidyTuesday: The Sad Story</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-04-17'>
+                                    April 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/post/tidytuesday-the-lonesome-kicker/">#TidyTuesday:The lonesome kicker</a></h3>
                                 
                                 <time class="published" datetime=
@@ -271,18 +283,6 @@ ga('send', 'pageview');
                                 <time class="published" datetime=
                                     '2018-02-13'>
                                     February 13, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/content/post/2017-06-12-ceea2017/">CEEA Reflections</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2017-06-12'>
-                                    June 12, 2017</time>
                             </header>
                             
 
@@ -310,7 +310,7 @@ ga('send', 'pageview');
   <header>
     <div class="title">
         
-            <h2><a href="/post/tidytuesday-the-lonesome-kicker/">#TidyTuesday:The lonesome kicker</a></h2>
+            <h2><a href="/post/tidytuesday-the-sad-story/">#TidyTuesday: The Sad Story</a></h2>
         
         
     </div>
@@ -318,11 +318,11 @@ ga('send', 'pageview');
         
 
         <time class="published"
-            datetime='2018-04-10'>
-            April 10, 2018</time>
+            datetime='2018-04-17'>
+            April 17, 2018</time>
         <span class="author"></span>
         
-            <p>4 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -334,60 +334,45 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    <p>I do <em>not</em> update this site as much as I would like. Interacting through twitter and the #R4DS slack channel has been my main contributions as of late to being more active in the #rstats community. I make plans to get to things like posting, then end up with other work, a neat idea, or just decide spend time with my family.</p>
-<p>Worthy endeavors all of them.</p>
-<p>Anyways, Thomas Mock (<span class="citation">@thomasmock</span>), has started up #tidytuesday out of the mentorship pilot program in #R4DS. I’ve been helping with little inputs here and there with #TidyTuesday and the future #tidyweek projects. It’s really great to see these take off, and I hope they keep going (congratulations Thomas and everyone stay tuned for #tidyweek).</p>
-<p>I didn’t do a write up for the inaugural #TidyTuesday last week. To sum up my submission: I like nice clean looking graphs, and I’m a sucker for a good slopegraph. Now I know I can work on my submission right in this post, but I made the decision to spin the #tidytuesday submissions off into their own repo. This way I don’t have to tie them to a post (keeping with my inconsistent blogging schedule)!</p>
-<p>This weeks was interesting. Love football. Love fivethirtyeight. Love that graphic. While I realize the level of granularity was appropriate for the story, I felt that it would be neat to see how ALL of the positions are faring. This wasn’t included in the #tidytuesday dataset, so I went hunting.</p>
-<p>Found the website that provided the data (sportrac), and checked out the tables that were the source of the data. I saw that they had everything available through tables on the website. I quickly checked out the terms of service to see if they had any sort of scraping policy. I couldn’t find anything, so I went forward with it, making sure to space out my scraping requests to not flood the server.</p>
-<p>It also involved a lot of url construction, at least in a very logical fashion. To do these sort of tasks, I really like using <code>tibble</code> to create a tibble of parameters, then create a scraping function and use <code>purrr</code> to iterate over the rows. Like so..</p>
-<pre class="r"><code>library(tidyverse)
-library(glue)
-library(rvest)
-
-# Create the data scaffold 
-years &lt;- 2011:2018
-positions &lt;- c(&quot;quarterback&quot;, &quot;running-back&quot;, &quot;fullback&quot;, &quot;guard&quot;, &quot;center&quot;, &quot;left-tackle&quot;, &quot;right-tackle&quot;, &quot;tight-end&quot;,&quot;wide-receiver&quot;,&quot;defensive-end&quot;,&quot;cornerback&quot;,&quot;defensive-tackle&quot;, &quot;inside-linebacker&quot;, &quot;outside-linebacker&quot;, &quot;free-safety&quot;, &quot;strong-safety&quot;, &quot;kicker&quot;,&quot;punter&quot;,&quot;long-snapper&quot;)
-
-scaffold &lt;- tibble(year = years,
-                   position = list(positions)) %&gt;% 
-  unnest() 
-
-
-# Function to scrape the top avg cap salary by player ----
-pull_position_data &lt;- function(year, position) {
-  
-  Sys.sleep(5)
-  
-  url &lt;- glue(&quot;http://www.spotrac.com/nfl/positional/{year}/{position}&quot;)
-  
-  read_html(url) %&gt;% 
-    html_nodes(&quot;#main &gt; div.teams &gt; table:nth-child(6)&quot;) %&gt;% 
-    html_table() %&gt;%
-    flatten_df() %&gt;% 
-    set_names(c(&quot;rank&quot;,&quot;player&quot;,&quot;cap_dollars&quot;, &quot;cap_percent&quot;))
-}
-
-
-tbl_data &lt;- scaffold %&gt;% 
-    mutate(data = map2(year, position, ~pull_position_data(.x, .y)))</code></pre>
-<p>That will get you the full data for all positions from 2011:2018. Some important things to note. First, always check to see if you are allowed to scrape the website. Two, if they have a guideline for it, follow it. Three, if they don’t have a guideline, be nice. Being nice is easy, and reflected in the use of <code>Sys.sleep(5)</code> to not overwhelm the server with requests.</p>
-<p>Another good thing to do is save the data to an RDS file so you don’t have to do it again :)</p>
-<p>After getting all of that data and playing around with various types, I decided on my submission, a heatmap. From the scraped data it was a quick <code>group_by</code>, <code>top_n</code> and <code>summarize</code> to get the data for the top 16 highest paid players in their positions and get the average.</p>
-<p>I did tweak the plot quite a bit, and included a simple function to make year labels similar to the style of fivethirtyeight. I’m cheating here, because I hardcoded that we’re looking at data from the 21st century. A <em>really</em> good function would do this automatically!</p>
-<pre class="r"><code># Formatter for 538 year labels 
-
-labels_538 &lt;- function(labels) {
-  labels_out &lt;- sprintf(&quot;20%s&quot;, str_sub(labels, 3, 4))
-  labels_out &lt;- c(labels_out[1], glue(&quot;&#39;{str_sub(labels_out[-1], 3, 4)}&quot;))
-  return(labels_out)
-}</code></pre>
+    <p>This weeks #TidyTuesday is all about global mortality rates. I’ve looked at datasets like this before, and while they are a great way to see interesting trends and practise some visualization skills, I think there is another lesson to be learned. The human element of data.</p>
+<p><strong>These data were people.</strong></p>
+<p>They meant something to someone. They were <em>here</em>, now they are <em>not</em>. I think its important to think about the context of the data in that aspect, and realize that any analysis conducted should be done with that firmly in mind. Perhaps its my training as an engineer showing, that any problem I set out to solve has a personal and societal element and it is important to understand the complexities from multiple points of view. In this I bear a burden to society, to do my utmost to keep the public safe and not to produce flawed designs to endanger anyone.</p>
+<p>IMO it is a topic best summed up by two quotes. First, from my third year Engineering Ethics professor:</p>
+<blockquote>
+<p>Just because you’re an engineer doesn’t mean you can drive the train.</p>
+</blockquote>
+<p>Second, Uncle Ben:</p>
+<blockquote>
+<p>With great power, comes great responsibility</p>
+</blockquote>
+<p>Plainly put: Just because you can doesn’t mean you should, and just because you have the capability and knowledge it doesn’t divest you of your responsibility. With all of the recent trends in data and the use of data lately, I think this is a timely lesson that all Data Scientists and Asipring Data Scientists should keep in mind.</p>
+<p>There are a lot of stories to tell in this dataset. I’m choosing one of the sadder ones. Suicide. It is a tradgedy that has touched countless people, families, communities and countries. It affects all, blind to status, blind to wealth, blind to language. From Our World In Data:</p>
+<blockquote>
+<p>Every suicide is a tragedy. According to estimates from the World Health Organisation (WHO), over 800,000 people die due to suicide every year. This corresponds to an age-standardized suicide rate of around 11.5 per 100,000 people – a figure equivalent to someone dying of suicide every 40 seconds. Yet suicides are preventable with timely, evidence-based interventions.</p>
+</blockquote>
+<p>Here in Canada, it is a critical issue in <a href="https://www.theguardian.com/inequality/2017/aug/30/our-society-is-broken-what-can-stop-canadas-first-nations-suicide-epidemic">First Nations communities</a> that highlights the dangers of inequality on so many levels, and puts considerable empahsis on the importance of <a href="http://reconciliationcanada.ca/">Reconciliation</a>. It is always in the public eye, and recently so at the <a href="https://pitchfork.com/news/mtv-vma-2017-watch-logics-moving-1-800-273-8255-performance/">MTV Video Music Awards</a>.</p>
+<p>It has affected my family.</p>
+<p>So, if you or anyone you know needs help, <a href="http://www.suicide.org/international-suicide-hotlines.html">please speak up and seek help</a>. You are not alone.</p>
+<p>This was a straightforward dataset to clean and create. Just some small regexes to clean the names. There was a small <code>dplyr</code> trick used to get the countries that were consistently above the global suicide rate for all years.</p>
+<pre class="r"><code>problem_countries &lt;- suicide_data %&gt;% 
+  filter(country != &quot;World&quot;) %&gt;% 
+  left_join(global_rate, by = &quot;year&quot;) %&gt;% 
+  group_by(country) %&gt;% 
+  filter(all(percentage.x &gt; percentage.y)) %&gt;% 
+  summarize(percentage = mean(percentage.x, na.rm = TRUE)) %&gt;% 
+  top_n(40, percentage) %&gt;% 
+  arrange(desc(percentage)) %&gt;% 
+  pull(country)</code></pre>
+<p>After that, I chose to present the differences between the individual countries and the global suicide rates using small multiples of a n area chart that overlays the global average on each country.</p>
 <div class="figure">
-<img src="https://cdn.rawgit.com/jkaupp/tidytuesdays/212d7030/week2/tw2_heatmap.png" />
-
+<img src="https://cdn.rawgit.com/jkaupp/tidytuesdays/1ca34a402151ce13893dbf20747df6c3ca5070cd/week3/tw3_sad_plot.png" alt="sad plot" />
+<p class="caption">sad plot</p>
 </div>
-<p>Looking at the results, you can see that the bottom end of the NFL pay band are: Fullbacks, Long Snappers, <a href="https://www.youtube.com/watch?v=uhvLjE8ZWl8">Kickers and Punters</a>. Just doesn’t get better for these guys year over year. The data that you see really emphasizes the focus of the NFL, highlighting passing attacks that emphasize scoring and excitement. The highest cap prices are elated to the passing game on offense, and either rushing or stopping the pass on defense.</p>
-<p>See you next week!</p>
+<p>There are startling truths there. Greenland. South Korea. France. There is a lot to look at, a lot to think about and so many factors to consider. Difficult to see where to start. A person, far wiser than myself told me once..</p>
+<blockquote>
+<p>It all begins, with a conversation.</p>
+</blockquote>
+<p>So let’s talk.</p>
 
   </div>
 
@@ -456,8 +441,8 @@ labels_538 &lt;- function(labels) {
 
 <ul class="actions pagination">
     
-        <li><a href="/post/second-star-to-the-right-and-straight-on-til-morning/"
-                class="button big previous">Second star to the right and straight on &#39;til morning</a></li>
+        <li><a href="/post/tidytuesday-the-lonesome-kicker/"
+                class="button big previous">#TidyTuesday:The lonesome kicker</a></li>
     
 
     
@@ -475,7 +460,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//twitter.com/share?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f&amp;text=%23TidyTuesday%3aThe%20lonesome%20kicker&amp;via=jakekaupp" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=%2fpost%2ftidytuesday-the-sad-story%2f&amp;text=%23TidyTuesday%3a%20The%20Sad%20Story&amp;via=jakekaupp" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -483,7 +468,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//plus.google.com/share?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=%2fpost%2ftidytuesday-the-sad-story%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -491,7 +476,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2ftidytuesday-the-lonesome-kicker%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2ftidytuesday-the-sad-story%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -499,7 +484,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//reddit.com/submit?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f&amp;title=%23TidyTuesday%3aThe%20lonesome%20kicker" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=%2fpost%2ftidytuesday-the-sad-story%2f&amp;title=%23TidyTuesday%3a%20The%20Sad%20Story" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -507,7 +492,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f&amp;title=%23TidyTuesday%3aThe%20lonesome%20kicker" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2ftidytuesday-the-sad-story%2f&amp;title=%23TidyTuesday%3a%20The%20Sad%20Story" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -515,7 +500,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f&amp;title=%23TidyTuesday%3aThe%20lonesome%20kicker" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2ftidytuesday-the-sad-story%2f&amp;title=%23TidyTuesday%3a%20The%20Sad%20Story" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -523,7 +508,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2ftidytuesday-the-lonesome-kicker%2f&amp;description=%23TidyTuesday%3aThe%20lonesome%20kicker" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2ftidytuesday-the-sad-story%2f&amp;description=%23TidyTuesday%3a%20The%20Sad%20Story" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -531,7 +516,7 @@ labels_538 &lt;- function(labels) {
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2ftidytuesday-the-lonesome-kicker%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2ftidytuesday-the-sad-story%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -676,6 +661,20 @@ labels_538 &lt;- function(labels) {
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/post/tidytuesday-the-sad-story/">#TidyTuesday: The Sad Story</a>
+              </h3>
+              
+              <time class="published" datetime='2018-04-17'>
+                April 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/post/tidytuesday-the-lonesome-kicker/">#TidyTuesday:The lonesome kicker</a>
               </h3>
               
@@ -695,20 +694,6 @@ labels_538 &lt;- function(labels) {
               
               <time class="published" datetime='2018-02-13'>
                 February 13, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/content/post/2017-06-12-ceea2017/">CEEA Reflections</a>
-              </h3>
-              
-              <time class="published" datetime='2017-06-12'>
-                June 12, 2017
               </time>
             </header>
             
@@ -747,7 +732,7 @@ labels_538 &lt;- function(labels) {
             <header>
               
                 <a href="/categories/r/">R</a>
-                <span style="float:right;">2</span>
+                <span style="float:right;">3</span>
               
             </header>
           </article>
@@ -758,7 +743,7 @@ labels_538 &lt;- function(labels) {
             <header>
               
                 <a href="/categories/visualization/">visualization</a>
-                <span style="float:right;">2</span>
+                <span style="float:right;">3</span>
               
             </header>
           </article>
