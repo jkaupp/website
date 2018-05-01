@@ -1,0 +1,13 @@
+---
+title: tidytuesday interactive planetary planetary interactive
+author: ~
+date: '2018-05-01'
+slug: tidytuesday-interactive-planetary-planetary-interactive
+categories: 
+  - visualization
+  - R
+tags: 
+  - tidytuesday
+---
+
+I've been having some days!  Between sick kids, myself getting sick, deadlines and development promises, I haven't had a lot of time to make any kind of blog post.  I have been following along with my #tidytuesday analysis and visualization
