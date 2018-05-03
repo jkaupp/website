@@ -142,7 +142,7 @@ This raised the question in my mind.  "How much would I like my commute if I had
 
 Here's my submission for week 5.  It's going to be legen......wait for it...
 
-![](https://cdn.rawgit.com/jkaupp/tidytuesdays/2348d94b/week5/tw5_choropleth%20map.png)
+![](https://cdn.rawgit.com/jkaupp/tidytuesdays/a6496407/week5/tw5_choropleth%20map.png)
 
 ....dary.
 
