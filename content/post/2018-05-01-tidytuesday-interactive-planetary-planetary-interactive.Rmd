@@ -42,7 +42,7 @@ First up is last weeks Australian tax data.  It was interesting to see other app
 
 The first thing I did was explore the data to get a sense of how big the equity gap was. I tidied up the data, and classified jobs by dividing male taxable income by female taxable income and visualized that distribution as a waffle plot.  This shows the jobs that men report more income in blue, and the jobs that women report more income in pink.
 
-```{r waffle, fig.width = 10}
+```{r waffle, fig.width = 10, echo = FALSE}
 waffle_data <- tidy_gap %>% 
   ungroup() %>% 
   mutate(category = case_when(income_gap > 1 ~ "Men have more income",
@@ -66,7 +66,7 @@ waffle(waffle_data,
 
 I decided to show the income difference in positions through a simple scatter plot, plotting each job as income earned by women vs income earned by men. I highlighted the jobs where women have greater income than men to illustrate the relative size of this equity problem.  I also wanted people to able to explore the data, and provide them the underlying information in each job.  Providing that level of detail, even simply labeling the job would put far too much clutter on the plot and obscure any patterns.  This is usually a problem that can easily be handled by adding interactivity to the plot, in this case creating a custom tooltip that provides the underlying information on demand.  There are packages to add this in R quite readily, mainly from the `htmlwidgets` family, and my favourite of those is `ggiraph` which provides interactive versions of `ggplot` geoms that can be used by all means of `javascript`.  If you're interested in this, [go check out the package on github](https://github.com/davidgohel/ggiraph).  There has been a pile written on the use of interactivity and interactive visualizaitons, but my favourite overview has to be in Andy Kirk's (@vvisualisingdata) [Data Visualization: A Handbook for Data Driven Design](http://www.visualisingdata.com/book/)
 
-```{r wk_interactive}
+```{r wk_interactive, echo = FALSE}
 
 make_tooltip <- function(occupation, female, male, income_gap, ...) {
  
@@ -130,7 +130,7 @@ My commute is about 25-30 minutes and is on a route that isn't that bad.  I list
 
 Enter How I Met Your Mother.
 
-![fiero](https://thedoublevision.files.wordpress.com/2014/03/8xgrbm1415hy.jpg)
+![](https://thedoublevision.files.wordpress.com/2014/03/8xgrbm1415hy.jpg)
 
 Marshall's Fiero in the show is his beloved car, inherited from his brothers.  Only the tape player worked in the car, and it had the single for the Proclaimers "I'm Gonna Be (500 Miles)" stuck in it.  It played it on a loop.  Over and over again. ad infinitum.
 
@@ -138,7 +138,7 @@ This raised the question in my mind.  "How much would I like my commute if I had
 
 Here's my submission for week 5.  It's going to be legen......wait for it...
 
-![deeeeessspaaaaacito](https://cdn.rawgit.com/jkaupp/tidytuesdays/2348d94b/week5/tw5_choropleth%20map.png)
+![](https://cdn.rawgit.com/jkaupp/tidytuesdays/2348d94b/week5/tw5_choropleth%20map.png)
 
 ....dary.
 
