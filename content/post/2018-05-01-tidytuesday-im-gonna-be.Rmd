@@ -51,6 +51,7 @@ waffle_data <- tidy_gap %>%
   pull(n) %>% 
   set_names(., c("Men have more income", "Women have more income"))
 
+
 waffle(waffle_data, 
        rows = 14,
        size = 1,
@@ -60,7 +61,9 @@ waffle(waffle_data,
   theme_jk() +
   labs(caption = "Data: data.gov.au | Graphic: @jakekaupp") +
   theme(axis.text = element_blank(),
-        legend.position = "bottom")
+        legend.position = "bottom",
+        plot.caption = element_text(family = "Scope One"),
+        plot.title = element_text(family = "Oswald"))
 ```
 
 
