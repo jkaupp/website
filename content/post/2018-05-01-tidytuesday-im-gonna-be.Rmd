@@ -1,8 +1,8 @@
 ---
-title: tidytuesday interactive planetary planetary interactive
+title: tidytuesday I'm gonna be...
 author: ~
 date: '2018-05-01'
-slug: tidytuesday-interactive-planetary-planetary-interactive
+slug: tidytuesday-im-gonna-be
 categories: 
   - visualization
   - R
