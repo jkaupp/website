@@ -42,7 +42,7 @@ First up is last weeks Australian tax data.  It was interesting to see other app
 
 The first thing I did was explore the data to get a sense of how big the equity gap was. I tidied up the data, and classified jobs by dividing male taxable income by female taxable income and visualized that distribution as a waffle plot.  This shows the jobs that men report more income in blue, and the jobs that women report more income in pink.
 
-```{r waffle, fig.width = 10, echo = FALSE, fig.showtext = TRUE}
+```{r waffle, fig.width = 10, echo = FALSE}
 waffle_data <- tidy_gap %>% 
   ungroup() %>% 
   mutate(category = case_when(income_gap > 1 ~ "Men have more income",
