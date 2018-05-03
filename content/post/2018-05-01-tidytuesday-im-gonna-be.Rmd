@@ -51,6 +51,7 @@ waffle_data <- tidy_gap %>%
   pull(n) %>% 
   set_names(., c("Men have more income", "Women have more income"))
 
+theme_set(theme_jk())
 
 waffle(waffle_data, 
        rows = 14,
