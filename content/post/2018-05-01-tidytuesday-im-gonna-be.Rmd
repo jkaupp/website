@@ -58,11 +58,11 @@ waffle(waffle_data,
        colors = c("dodgerblue3", "deeppink"), 
        legend_pos = "bottom", 
        title = str_wrap("Out of 1092 occupations on record, men have more taxable income than women in 1011 of them.  That's 92.5% of occupations for those counting at home.", 70)) + 
-
   labs(caption = "Data: data.gov.au | Graphic: @jakekaupp") +
   theme(axis.text = element_blank(),
-        legend.position = "bottom") +
-  theme_jk()
+        legend.position = "bottom",
+        plot.caption = element_text(family = "Scope One"),
+        plot.title = element_text(family = "Oswald"))
 ```
 
 
