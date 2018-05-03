@@ -53,13 +53,14 @@ waffle_data <- tidy_gap %>%
 
 theme_set(theme_jk())
 
-waffle(waffle_data, 
+p <- waffle(waffle_data, 
        rows = 14,
        size = 1,
        colors = c("dodgerblue3", "deeppink"), 
        legend_pos = "bottom", 
-       title = str_wrap("Out of 1092 occupations on record, men have more taxable income than women in 1011 of them.  That's 92.5% of occupations for those counting at home.", 70)) + 
-  labs(caption = "Data: data.gov.au | Graphic: @jakekaupp") +
+       title = str_wrap("Out of 1092 occupations on record, men have more taxable income than women in 1011 of them.  That's 92.5% of occupations for those counting at home.", 70)) 
+
+ p + labs(caption = "Data: data.gov.au | Graphic: @jakekaupp") +
   theme(axis.text = element_blank(),
         legend.position = "bottom",
         plot.caption = element_text(family = "Scope One"),
