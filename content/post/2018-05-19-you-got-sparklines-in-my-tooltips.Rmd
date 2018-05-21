@@ -1,0 +1,26 @@
+---
+title: You got sparklines in my tooltips!
+author: ~
+date: '2018-05-19'
+slug: you-got-sparklines-in-my-tooltips
+categories:
+  - R
+tags:
+  - R
+description: ''
+featured: ''
+featuredalt: ''
+featuredpath: ''
+linktitle: ''
+---
+
+A few years ago I came across the package `ggiraph` by David Gohel.  It is a packag that allows `ggplot2` graphics to have some interactive elements by using `d3.js` and the general duct-tape-and-fairy-dust interactivity in R graphics that is `htmlWidgets`.  It is a wondeful package, and I am a big fan of the customization and quality that it affords.  I mean `ggplot2` alone brings people to R with quality of graphics, add high quality interactivity is just sprinkles.
+
+I then saw this [Rpubs post from Bob Rudis](https://rpubs.com/hrbrmstr/barcharttooltipsggiraph) that showed how to include a bar-chart like tooltip in a `ggiraph` choropleth map with some clever use of `css` and `html`.  Since that point I've 
+
+
+
+
+
+
+
