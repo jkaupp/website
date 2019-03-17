@@ -69,7 +69,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   paragraph = "<i>hic sunt dracones</i>"
 
-  about     = "Proud husband & father. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Assessment professional. Je suis un canard geant."  
+  about     = "Proud husband & father. Insitutional Researcher. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Je suis un canard geant."  
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
@@ -171,7 +171,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   telegram         = ""
   vine             = ""
   googlescholar    = "L40AsJoAAAAJ"
-  orcid            = ""
+  orcid            = "0000-0002-3217-3294"
   researchgate     = "Jake_Kaupp"    
   # Email
   email            = "jkaupp@gmail.com"
