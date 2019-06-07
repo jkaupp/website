@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Jake Kaupp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tidytuesday</title>
+      <link>/tags/tidytuesday/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidytuesday/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>
@@ -17,15 +26,6 @@
       <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tidytuesday</title>
-      <link>/tags/tidytuesday/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tidytuesday/</guid>
       <description></description>
     </item>
     

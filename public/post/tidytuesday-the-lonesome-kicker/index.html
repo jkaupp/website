@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.40.2" />
+        <meta name="generator" content="Hugo 0.55.6" />
         
   
     
@@ -49,22 +49,8 @@ Worthy endeavors all of them.
 Anyways, Thomas Mock (@thomasmock), has started up #tidytuesday out of the mentorship pilot program in #R4DS." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/tidytuesday-the-lonesome-kicker/" />
-
-
-
 <meta property="article:published_time" content="2018-04-10T00:00:00&#43;00:00"/>
-
 <meta property="article:modified_time" content="2018-04-10T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
 
         
 <meta itemprop="name" content="#TidyTuesday:The lonesome kicker">
@@ -105,14 +91,17 @@ Anyways, Thomas Mock (@thomasmock), has started up #tidytuesday out of the mento
         
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-113202268-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-113202268-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -271,6 +260,18 @@ ga('send', 'pageview');
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/post/">Post</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-05-01'>
+                                    May 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/post/tidytuesday-im-gonna-be/">tidytuesday I&#39;m gonna be...</a></h3>
                                 
                                 <time class="published" datetime=
@@ -288,18 +289,6 @@ ga('send', 'pageview');
                                 <time class="published" datetime=
                                     '2018-04-17'>
                                     April 17, 2018</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/post/tidytuesday-the-lonesome-kicker/">#TidyTuesday:The lonesome kicker</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2018-04-10'>
-                                    April 10, 2018</time>
                             </header>
                             
 
@@ -429,7 +418,10 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    <p>I do <em>not</em> update this site as much as I would like. Interacting through twitter and the #R4DS slack channel has been my main contributions as of late to being more active in the #rstats community. I make plans to get to things like posting, then end up with other work, a neat idea, or just decide spend time with my family.</p>
+    
+
+
+<p>I do <em>not</em> update this site as much as I would like. Interacting through twitter and the #R4DS slack channel has been my main contributions as of late to being more active in the #rstats community. I make plans to get to things like posting, then end up with other work, a neat idea, or just decide spend time with my family.</p>
 <p>Worthy endeavors all of them.</p>
 <p>Anyways, Thomas Mock (<span class="citation">@thomasmock</span>), has started up #tidytuesday out of the mentorship pilot program in #R4DS. I’ve been helping with little inputs here and there with #TidyTuesday and the future #tidyweek projects. It’s really great to see these take off, and I hope they keep going (congratulations Thomas and everyone stay tuned for #tidyweek).</p>
 <p>I didn’t do a write up for the inaugural #TidyTuesday last week. To sum up my submission: I like nice clean looking graphs, and I’m a sucker for a good slopegraph. Now I know I can work on my submission right in this post, but I made the decision to spin the #tidytuesday submissions off into their own repo. This way I don’t have to tie them to a post (keeping with my inconsistent blogging schedule)!</p>
@@ -477,10 +469,7 @@ labels_538 &lt;- function(labels) {
   labels_out &lt;- c(labels_out[1], glue(&quot;&#39;{str_sub(labels_out[-1], 3, 4)}&quot;))
   return(labels_out)
 }</code></pre>
-<div class="figure">
-<img src="https://cdn.rawgit.com/jkaupp/tidytuesdays/212d7030/week2/tw2_heatmap.png" />
-
-</div>
+<p><img src="https://cdn.rawgit.com/jkaupp/tidytuesdays/212d7030/week2/tw2_heatmap.png" /></p>
 <p>Looking at the results, you can see that the bottom end of the NFL pay band are: Fullbacks, Long Snappers, <a href="https://www.youtube.com/watch?v=uhvLjE8ZWl8">Kickers and Punters</a>. Just doesn’t get better for these guys year over year. The data that you see really emphasizes the focus of the NFL, highlighting passing attacks that emphasize scoring and excitement. The highest cap prices are elated to the passing game on offense, and either rushing or stopping the pass on defense.</p>
 <p>See you next week!</p>
 
@@ -527,7 +516,7 @@ labels_538 &lt;- function(labels) {
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -666,6 +655,8 @@ labels_538 &lt;- function(labels) {
 
 
 
+<li><a href="//orcid.org/0000-0002-3217-3294" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a></li>
+
 
 
 <li><a href="//researchgate.net/profile/Jake_Kaupp" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
@@ -696,6 +687,20 @@ labels_538 &lt;- function(labels) {
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/post/">Post</a>
+              </h3>
+              
+              <time class="published" datetime='2018-05-01'>
+                May 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/post/tidytuesday-im-gonna-be/">tidytuesday I&#39;m gonna be...</a>
               </h3>
               
@@ -715,20 +720,6 @@ labels_538 &lt;- function(labels) {
               
               <time class="published" datetime='2018-04-17'>
                 April 17, 2018
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/post/tidytuesday-the-lonesome-kicker/">#TidyTuesday:The lonesome kicker</a>
-              </h3>
-              
-              <time class="published" datetime='2018-04-10'>
-                April 10, 2018
               </time>
             </header>
             
@@ -766,7 +757,7 @@ labels_538 &lt;- function(labels) {
           <article>
             <header>
               
-                <a href="/categories/r/">R</a>
+                <a href="/categories/r/">r</a>
                 <span style="float:right;">4</span>
               
             </header>
@@ -802,7 +793,7 @@ labels_538 &lt;- function(labels) {
   
     <section id="mini-bio">
       <h3>About</h1>
-      <p>Proud husband & father. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Assessment professional. Je suis un canard geant.</p>
+      <p>Proud husband & father. Insitutional Researcher. Engineer in Data Science Clothing. Information Visualization Designer. Consultant of sorts. R Enthusiast. Sketchnoter. Je suis un canard geant.</p>
       <a href="/about/" class="button">Learn More</a>
     </section>
   

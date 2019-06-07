@@ -41,6 +41,7 @@ library(ggiraph)
 library(showtext)
 library(emo)
 library(waffle)
+library(usethis)
 
 opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.width = 8, fig.height = 4)
 
@@ -48,7 +49,7 @@ font_add_google("Oswald", "Oswald")
 font_add_google("Scope One", "Scope One")
 
 if(!exists("hrbr_stars")) {
-  hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .limit = Inf) 
+  hrbr_stars <- gh("/users/:username/starred", username = "hrbrmstr", .token = usethis::github_token(), .limit = Inf) 
   
   stars_tbl <- tibble(name = map_chr(hrbr_stars, "name"),
                       description = map_chr(hrbr_stars, "description", .null = NA),
